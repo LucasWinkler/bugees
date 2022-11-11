@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "dotenv-cli": "^6.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "prisma": "^4.6.1"
   }
 }
