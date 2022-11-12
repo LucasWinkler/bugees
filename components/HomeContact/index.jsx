@@ -23,7 +23,7 @@ const Flex = styled.div`
 
 export default function HomeContact() {
   return (
-    <ContactSection>
+    <ContactSection id='contact'>
       <HomeContainer>
         <Flex>
           <Heading>Get in Touch</Heading>

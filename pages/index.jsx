@@ -4,6 +4,8 @@ import HomeContainer from '../components/HomeContainer';
 import HomeHero from '../components/HomeHero';
 import HomeCTA from '../components/HomeCTA';
 import HomeContact from '../components/HomeContact';
+import HomeFAQ from '../components/HomeFAQ';
+import HomeFeatures from '../components/HomeFeatures';
 
 export default function Home() {
   return (
@@ -18,45 +20,9 @@ export default function Home() {
       </Head>
 
       <HomeHero />
-
-      <section>
-        <HomeContainer>
-          <h2>Features</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
-            praesentium!
-          </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
-            praesentium!
-          </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
-            praesentium!
-          </p>
-        </HomeContainer>
-      </section>
-
+      <HomeFeatures />
       <HomeCTA />
-
-      <section>
-        <HomeContainer>
-          <h2>Frequently Asked Questions</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
-            praesentium!
-          </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
-            praesentium!
-          </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
-            praesentium!
-          </p>
-        </HomeContainer>
-      </section>
-
+      <HomeFAQ />
       <HomeContact />
     </>
   );

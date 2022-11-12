@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const Footer = styled.footer`
   padding: 3em;
+  background-color: ${props => props.theme.colour.neutral200};
 `;
 
 const Flex = styled.div`

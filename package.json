@@ -16,6 +16,8 @@
     "production:build": "npx prisma generate && npx prisma migrate deploy && next build"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.4",
+    "@heroicons/react": "^2.0.13",
     "@next/font": "^13.0.3",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",

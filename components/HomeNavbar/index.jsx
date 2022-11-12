@@ -57,7 +57,7 @@ export default function HomeNavbar() {
           </Logo>
           <NavList>
             <NavItem>
-              <NavLink href='/#features'>Features</NavLink>
+              <NavLink href='#features'>Features</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href='#faq'>FAQ</NavLink>
