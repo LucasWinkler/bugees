@@ -1,13 +1,16 @@
+import HomeNavbar from '../../components/HomeNavbar';
+import HomeFooter from '../../components/HomeFooter';
+
 export default function HomeLayout({ children }) {
   return (
     <>
       <header>
-        <nav>
-          <p>Landing Page Navbar</p>
-        </nav>
+        <HomeNavbar />
       </header>
 
       <main>{children}</main>
+
+      <HomeFooter />
     </>
   );
 }

@@ -8,7 +8,11 @@ const theme = {
     heading: '1.5',
   },
   colour: {
-    primary400: '#ffffff',
+    primary400: '#1882FF',
+    neutral100: '#FFFFFF',
+    neutral200: '#E4E8ED',
+    neutral700: '#2D3135',
+    neutral900: '#000000',
   },
 };
 

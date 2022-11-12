@@ -10,8 +10,9 @@ const Globals = createGlobalStyle`
   ${remedy}
 
   body {
-    background: ${props => props.theme.colour.background};
+    background: ${props => props.theme.colour.neutral200};
     font-family: ${openSans.style.fontFamily};
+    color: ${props => props.theme.colour.neutral700}
   }
 `;
 

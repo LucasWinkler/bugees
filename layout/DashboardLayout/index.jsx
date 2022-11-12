@@ -1,14 +1,11 @@
+import DashboardHeader from '../../components/DashboardHeader';
+import DashboardSidebar from '../../components/DashboardSidebar';
+
 export default function DashboardLayout({ children }) {
   return (
     <>
-      <header>
-        <p>Dashboard Header</p>
-      </header>
-      <aside>
-        <nav>
-          <p>Dashboard Sidebar</p>
-        </nav>
-      </aside>
+      <DashboardHeader />
+      <DashboardSidebar />
 
       <main>{children}</main>
     </>
