@@ -15,12 +15,57 @@ export default function Home() {
         <link rel='icon' href='/favicon.svg' />
       </Head>
 
-      <HomeContainer>
-        <h1>
-          Your new best friend that will help you track down those pesky bugs.
-        </h1>
-        <Link href='/dashboard'>Get work done faster</Link>
-      </HomeContainer>
+      <section>
+        <HomeContainer>
+          <h1>
+            Your new best friend that will help you track down those pesky bugs.
+          </h1>
+          <Link href='/dashboard'>Get work done faster</Link>
+        </HomeContainer>
+      </section>
+
+      <section>
+        <HomeContainer>
+          <h2>Features</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+            praesentium!
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+            praesentium!
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+            praesentium!
+          </p>
+        </HomeContainer>
+      </section>
+
+      <section>
+        <HomeContainer>
+          <h2>Frequently Asked Questions</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+            praesentium!
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+            praesentium!
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+            praesentium!
+          </p>
+        </HomeContainer>
+      </section>
+
+      <section>
+        <HomeContainer>
+          <h2>Contact</h2>
+          <p>hello@lucaswinkler.dev</p>
+        </HomeContainer>
+      </section>
     </>
   );
 }

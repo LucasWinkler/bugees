@@ -4,9 +4,7 @@ import HomeFooter from '../../components/HomeFooter';
 export default function HomeLayout({ children }) {
   return (
     <>
-      <header>
-        <HomeNavbar />
-      </header>
+      <HomeNavbar />
 
       <main>{children}</main>
 

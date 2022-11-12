@@ -10,7 +10,8 @@ const theme = {
   colour: {
     primary400: '#1882FF',
     neutral100: '#FFFFFF',
-    neutral200: '#E4E8ED',
+    neutral200: '#F3F4F5',
+    neutral600: '#464A4F',
     neutral700: '#2D3135',
     neutral900: '#000000',
   },
