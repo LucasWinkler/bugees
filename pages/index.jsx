@@ -1,7 +1,9 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Layout from '../layout/HomeLayout';
 import HomeContainer from '../components/HomeContainer';
+import HomeHero from '../components/HomeHero';
+import HomeCTA from '../components/HomeCTA';
+import HomeContact from '../components/HomeContact';
 
 export default function Home() {
   return (
@@ -15,14 +17,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.svg' />
       </Head>
 
-      <section>
-        <HomeContainer>
-          <h1>
-            Your new best friend that will help you track down those pesky bugs.
-          </h1>
-          <Link href='/dashboard'>Get work done faster</Link>
-        </HomeContainer>
-      </section>
+      <HomeHero />
 
       <section>
         <HomeContainer>
@@ -42,6 +37,8 @@ export default function Home() {
         </HomeContainer>
       </section>
 
+      <HomeCTA />
+
       <section>
         <HomeContainer>
           <h2>Frequently Asked Questions</h2>
@@ -60,12 +57,7 @@ export default function Home() {
         </HomeContainer>
       </section>
 
-      <section>
-        <HomeContainer>
-          <h2>Contact</h2>
-          <p>hello@lucaswinkler.dev</p>
-        </HomeContainer>
-      </section>
+      <HomeContact />
     </>
   );
 }

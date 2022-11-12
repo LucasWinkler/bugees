@@ -9,6 +9,10 @@ const openSans = Open_Sans();
 const Globals = createGlobalStyle`
   ${remedy}
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: ${props => props.theme.colour.neutral200};
     font-family: ${openSans.style.fontFamily};
