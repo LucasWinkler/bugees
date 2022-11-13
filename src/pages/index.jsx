@@ -11,12 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Bugees | Home</title>
-        <meta
-          name='description'
-          content='Your personal bug tracker that allows you to efficiently hunt down those pesky bugs.'
-        />
-        <link rel='icon' href='/favicon.svg' />
+        <title>Home | Bugees</title>
       </Head>
 
       <HomeHero />

@@ -24,12 +24,12 @@
     "next": "13.0.3",
     "next-auth": "^4.16.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "styled-components": "^5.3.6"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "dotenv-cli": "^6.0.0",
     "eslint-config-prettier": "^8.5.0",
-    "prisma": "^4.6.1"
+    "prisma": "^4.6.1",
+    "sass": "^1.56.1"
   }
 }
