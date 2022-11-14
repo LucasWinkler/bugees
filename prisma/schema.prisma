@@ -11,7 +11,6 @@ datasource db {
 
 enum Role {
   USER
-  MANAGER
   ADMIN
 }
 
@@ -33,36 +32,51 @@ enum Priority {
 // Models
 
 model User {
-  id    Int     @id @default(autoincrement())
-  name  String?
-  email String  @unique
-  role  Role    @default(USER)
-
-  reportedBugs Bug[] @relation(name: "Reporter")
-  assignedBugs Bug[] @relation(name: "Assignee")
-
-  createdAt DateTime @default(now())
+  id              Int       @id @default(autoincrement())
+  name            String?
+  email           String    @unique
+  role            Role      @default(USER)
+  projects        Project[] @relation(name: "ManagedProjects")
+  managedProjects Project[]
+  reportedBugs    Bug[]     @relation(name: "Reporter")
+  assignedBugs    Bug[]     @relation(name: "Assignee")
+  createdAt       DateTime  @default(now())
 
   @@map("users")
 }
 
 model Bug {
-  id          Int    @id @default(autoincrement())
-  name        String @db.VarChar(255)
-  description String @db.Text
-  status      Status @default(OPEN)
-
-  reporter   User? @relation(name: "Reporter", fields: [reporterId], references: [id])
-  reporterId Int?
-  assignee   User? @relation(name: "Assignee", fields: [assigneeId], references: [id])
-  assigneeId Int?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          Int       @id @default(autoincrement())
+  name        String    @db.VarChar(255)
+  description String    @db.Text
+  status      Status    @default(OPEN)
+  reporter    User      @relation(name: "Reporter", fields: [reporterId], references: [id])
+  reporterId  Int
+  assignee    User?     @relation(name: "Assignee", fields: [assigneeId], references: [id])
+  assigneeId  Int?
+  projects    Project[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 
   @@map("bugs")
 }
 
-// model BugHistory {
+// TODO
+model BugHistory {
+  id Int @id
+}
 
-// }
+model Project {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  description String   @db.Text
+  isArchived  Boolean  @default(false)
+  manager     User     @relation(name: "ManagedProjects", fields: [managerId], references: [id])
+  managerId   Int
+  users       User[]
+  bugs        Bug[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("projects")
+}
