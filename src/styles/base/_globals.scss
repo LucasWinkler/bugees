@@ -1,0 +1,11 @@
+:root {
+  --colour-primary: #0681f5;
+}
+
+[data-theme='dark'] {
+  --colour-primary: #f53606;
+}
+
+html {
+  scroll-behavior: smooth;
+}

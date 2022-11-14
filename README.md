@@ -1,34 +1,116 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bug/Issue Tracker
 
-## Getting Started
+## Inspiration:
 
-First, run the development server:
+- CoderFoundry
+  - They have their own bug tracker and they focus on fullstack development.
+  - https://www.youtube.com/watch?v=vG824vBdYY8
+- Sam Meech-Ward
+  - Amazing at explaning
+  - Great tutorials for React and Next including implementing Prisma, Next Auth etc... - https://www.zoho.com/bugtracker/
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Project Details
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Name:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Bugees
+  - Will probably use this one
+  - Bug-ees
+  - Bugalog
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Description:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Your personal bug tracker that allows you to efficiently hunt down those pesky bugs.
 
-## Learn More
+Stack:
 
-To learn more about Next.js, take a look at the following resources:
+- Next
+- Next Auth
+- Prisma
+- Heroicons
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Models
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+User:
 
-## Deploy on Vercel
+- Name
+- Email
+- Role
+- User
+- Manager
+  - Archive their projects
+  - Invite/kick users from their projects
+- Projects
+- Comments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Bug:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Name
+- Description
+- Status
+  - Open
+  - Resolved
+  - In Progress
+- Priority
+  - None
+  - Low
+  - Medium
+  - High
+- Assignee
+- Reporter
+- Comment
+- Created date
+- Updated date
+- History
+  - Bug
+  - Edited by
+  - Old value
+  - New value
+  - Date changed
+
+Project:
+
+- Name
+- Description
+- Created by
+- Users
+- Bugs
+- Is archived
+- Comments
+
+Comment:
+
+- Description
+- Created by
+
+## Extra Notes
+
+Pages:
+
+- Landing Page
+- Login & Signup
+- Demo user link
+- Dashboard
+  - Overview
+  - Stats and charts
+  - Bugs by priority
+  - Bugs by type
+  - View projects (all projects the user is in)
+  - View reported bugs
+  - View assigned bugs
+  - View all bugs (all bugs from all projects that the user is in)
+  - Users settings
+  - [ADMIN]
+    - Manage user roles
+    - Manage all projects
+    - Manage all bugs
+
+Roles:
+
+- User
+- Project Manager
+  - Invite/remove user to/from project
+  - Archive project
+- Admin
+  - Add/remove users roles
+  - CRUD on all projects and bugs
