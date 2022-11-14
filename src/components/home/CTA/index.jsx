@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function HomeCTA() {
+export default function CTA() {
   return (
     <section id='cta'>
       <div>

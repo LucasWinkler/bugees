@@ -1,10 +1,11 @@
 import Head from 'next/head';
-import Layout from '../layout/Home';
-import HomeHero from '../components/HomeHero';
-import HomeCTA from '../components/HomeCTA';
-import HomeContact from '../components/HomeContact';
-import HomeFAQ from '../components/HomeFAQ';
-import HomeFeatures from '../components/HomeFeatures';
+import Layout from '../layouts/Home';
+import Hero from '../components/home/Hero';
+import CTA from '../components/home/CTA';
+import Contact from '../components/home/Contact';
+import FAQ from '../components/home/FAQ';
+import Features from '../components/home/Features';
+import Button from '../components/common/Button';
 
 export default function Home() {
   return (
@@ -12,11 +13,12 @@ export default function Home() {
       <Head>
         <title>Home | Bugees</title>
       </Head>
-      <HomeHero />
-      <HomeFeatures />
-      <HomeCTA />
-      <HomeFAQ />
-      <HomeContact />
+      <Hero />
+      <Button>This is a button</Button>
+      <Features />
+      <CTA />
+      <FAQ />
+      <Contact />
     </>
   );
 }

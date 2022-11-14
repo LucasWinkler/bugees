@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout from '../../layout/Dashboard';
+import Layout from '../../layouts/Dashboard';
 
 export default function Dashboard() {
   return (

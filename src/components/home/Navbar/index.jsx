@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function HomeNavbar() {
+export default function Navbar() {
   return (
     <header>
       <div>
@@ -17,13 +17,19 @@ export default function HomeNavbar() {
           </Link>
           <ul>
             <li>
-              <Link href='#features'>Features</Link>
+              <Link scroll={false} href='#features'>
+                Features
+              </Link>
             </li>
             <li>
-              <Link href='#faq'>FAQ</Link>
+              <Link scroll={false} href='#faq'>
+                FAQ
+              </Link>
             </li>
             <li>
-              <Link href='#contact'>Contact</Link>
+              <Link scroll={false} href='#contact'>
+                Contact
+              </Link>
             </li>
           </ul>
           <div>

@@ -61,7 +61,7 @@ model Bug {
   @@map("bugs")
 }
 
-// TODO
+// TODO: Might change this to Audit instead which can keep track of any changes from any table
 model BugHistory {
   id Int @id
 }
