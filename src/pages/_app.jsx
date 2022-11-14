@@ -1,6 +1,6 @@
 import { SessionProvider } from 'next-auth/react';
 import Head from 'next/head';
-import seo from '../util/Seo';
+import seo from '../util/seo';
 
 export default function App({
   Component,
