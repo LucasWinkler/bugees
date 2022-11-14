@@ -1,5 +1,6 @@
 import { SessionProvider } from 'next-auth/react';
 import { Inter } from '@next/font/google';
+import { ThemeProvider } from 'next-themes';
 
 import '../styles/index.scss';
 
@@ -18,9 +19,12 @@ export default function App({
           font-family: ${inter.style.fontFamily};
         }
       `}</style>
-      <SessionProvider session={session}>
-        {getLayout(<Component {...pageProps} />)}
-      </SessionProvider>
+
+      <ThemeProvider themes={['pink', 'red', 'dark', 'light']}>
+        <SessionProvider session={session}>
+          {getLayout(<Component {...pageProps} />)}
+        </SessionProvider>
+      </ThemeProvider>
     </>
   );
 }
