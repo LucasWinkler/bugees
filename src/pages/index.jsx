@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Layout from '../layout/HomeLayout';
-import HomeContainer from '../components/HomeContainer';
 import HomeHero from '../components/HomeHero';
 import HomeCTA from '../components/HomeCTA';
 import HomeContact from '../components/HomeContact';
@@ -13,7 +12,6 @@ export default function Home() {
       <Head>
         <title>Home | Bugees</title>
       </Head>
-
       <HomeHero />
       <HomeFeatures />
       <HomeCTA />

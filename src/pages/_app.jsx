@@ -1,10 +1,6 @@
 import { SessionProvider } from 'next-auth/react';
-import { ThemeProvider } from 'styled-components';
-import Head from 'next/head.js';
-
-import theme from '../styles/theme.js';
-import Globals from '../styles/globals';
-import Seo from '../util/SEO.js';
+import Head from 'next/head';
+import seo from '../util/Seo';
 
 export default function App({
   Component,
@@ -15,13 +11,10 @@ export default function App({
   return (
     <>
       <Head>
-        <title>${Seo.title}</title>
+        <title>{seo.title}</title>
       </Head>
       <SessionProvider session={session}>
-        <ThemeProvider theme={theme}>
-          <Globals />
-          {getLayout(<Component {...pageProps} />)}
-        </ThemeProvider>
+        {getLayout(<Component {...pageProps} />)}
       </SessionProvider>
     </>
   );

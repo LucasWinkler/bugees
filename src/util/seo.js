@@ -3,7 +3,7 @@ const Seo = {
   description:
     'Your new best friend that will help you track down those pesky bugs.',
   openGraph: {
-    siteName: 'Bugees',
+    title: 'Bugees',
     type: 'website',
     url: 'https://bugees.vercel.app/',
     description:
