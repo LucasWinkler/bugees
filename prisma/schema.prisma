@@ -42,6 +42,8 @@ model User {
   assignedBugs Bug[] @relation(name: "Assignee")
 
   createdAt DateTime @default(now())
+
+  @@map("users")
 }
 
 model Bug {
@@ -57,6 +59,8 @@ model Bug {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("bugs")
 }
 
 // model BugHistory {
