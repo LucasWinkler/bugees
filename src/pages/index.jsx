@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout from '../layout/HomeLayout';
+import Layout from '../layout/Home';
 import HomeHero from '../components/HomeHero';
 import HomeCTA from '../components/HomeCTA';
 import HomeContact from '../components/HomeContact';

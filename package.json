@@ -2,11 +2,15 @@
   "name": "bugees",
   "version": "0.1.0",
   "private": true,
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "seed": "npx dotenv -e .env.local -- prisma db seed",
     "migrate:dev": "npx dotenv -e .env.local -- prisma migrate dev",
     "db:push": "npx dotenv -e .env.local -- prisma db push",
     "migrate:reset": "npx dotenv -e .env.local -- prisma migrate reset",
