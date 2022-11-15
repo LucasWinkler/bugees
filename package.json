@@ -22,7 +22,9 @@
   "dependencies": {
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^2.0.13",
+    "@next-auth/prisma-adapter": "^1.0.5",
     "@next/font": "^13.0.3",
+    "@prisma/client": "^4.6.1",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
     "next": "13.0.3",
