@@ -52,7 +52,7 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
-  @@map("accounts")
+  @@map("Accounts")
 }
 
 model Session {
@@ -62,7 +62,7 @@ model Session {
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@map("sessions")
+  @@map("Sessions")
 }
 
 model VerificationToken {
@@ -71,7 +71,7 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
-  @@map("verificationtokens")
+  @@map("VerificationTokens")
 }
 
 model User {
@@ -89,7 +89,7 @@ model User {
   reportedBugs    Bug[]     @relation("ReportedBugs")
   assignedBugs    Bug[]     @relation("AssignedBugs")
 
-  @@map("users")
+  @@map("Users")
 }
 
 model Bug {
@@ -97,15 +97,15 @@ model Bug {
   name        String    @db.VarChar(255)
   description String    @db.Text
   status      Status    @default(OPEN)
-  reporter    User      @relation("ReportedBugs", fields: [reporterId], references: [id])
   reporterId  String
-  assignee    User?     @relation("AssignedBugs", fields: [assigneeId], references: [id])
   assigneeId  String?
   projects    Project[]
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+  reporter    User      @relation("ReportedBugs", fields: [reporterId], references: [id])
+  assignee    User?     @relation("AssignedBugs", fields: [assigneeId], references: [id])
 
-  @@map("bugs")
+  @@map("Bugs")
 }
 
 model Project {
@@ -113,17 +113,14 @@ model Project {
   name        String   @db.VarChar(255)
   description String   @db.Text
   isArchived  Boolean  @default(false)
-  manager     User     @relation("ManagedProjects", fields: [managerId], references: [id])
   managerId   String
   users       User[]
   bugs        Bug[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  manager     User     @relation("ManagedProjects", fields: [managerId], references: [id])
 
-  @@map("projects")
+  @@map("Projects")
 }
 
 // TODO: Setup audit table for update history
-// model Audit {
-//   id Int @id @default(autoincrement())
-// }
