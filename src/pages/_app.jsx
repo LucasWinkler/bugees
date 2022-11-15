@@ -20,7 +20,7 @@ export default function App({
         }
       `}</style>
 
-      <ThemeProvider themes={['pink', 'red', 'dark', 'light']}>
+      <ThemeProvider>
         <SessionProvider session={session}>
           {getLayout(<Component {...pageProps} />)}
         </SessionProvider>
