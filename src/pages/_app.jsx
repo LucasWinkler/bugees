@@ -1,8 +1,6 @@
 import { SessionProvider } from 'next-auth/react';
 import { Inter } from '@next/font/google';
-import { ThemeProvider } from 'next-themes';
-
-import '../styles/index.scss';
+import '../styles/globals.css';
 
 const inter = Inter({ subsets: ['latin-ext'] });
 
@@ -20,11 +18,9 @@ export default function App({
         }
       `}</style>
 
-      <ThemeProvider>
-        <SessionProvider session={session}>
-          {getLayout(<Component {...pageProps} />)}
-        </SessionProvider>
-      </ThemeProvider>
+      <SessionProvider session={session}>
+        {getLayout(<Component {...pageProps} />)}
+      </SessionProvider>
     </>
   );
 }

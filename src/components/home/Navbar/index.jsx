@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import ThemeToggle from '../../common/ThemeToggle';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function Navbar() {
@@ -61,7 +60,6 @@ export default function Navbar() {
               </>
             )}
           </div>
-          <ThemeToggle />
         </nav>
       </div>
     </header>
