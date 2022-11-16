@@ -1,7 +1,11 @@
 import Head from 'next/head';
 import Layout from '../../layouts/Dashboard';
+import { useSession, getSession } from 'next-auth/react';
+import { Role } from '@prisma/client';
 
 export default function Dashboard() {
+  const { data: session } = useSession();
+
   return (
     <>
       <Head>
@@ -9,9 +13,24 @@ export default function Dashboard() {
       </Head>
 
       <h1>Dashboard - Overview</h1>
+      <p>Welcome, {session.user.name}</p>
     </>
   );
 }
+
+export const getServerSideProps = async context => {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+      },
+    };
+  }
+  return {
+    props: { session },
+  };
+};
 
 Dashboard.getLayout = function (page) {
   return <Layout>{page}</Layout>;

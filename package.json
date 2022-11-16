@@ -14,6 +14,7 @@
     "migrate:dev": "npx dotenv -e .env.local -- prisma migrate dev",
     "db:push": "npx dotenv -e .env.local -- prisma db push",
     "migrate:reset": "npx dotenv -e .env.local -- prisma migrate reset",
+    "prisma:reset": "npx dotenv -e .env.local -- prisma reset",
     "db:seed": "npx dotenv -e .env.local -- prisma db seed",
     "prisma:generate": "npx dotenv -e .env.local -- prisma generate",
     "prisma:studio": "npx dotenv -e .env.local -- prisma studio",
@@ -30,6 +31,7 @@
     "next": "13.0.3",
     "next-auth": "^4.16.4",
     "next-themes": "^0.2.1",
+    "nodemailer": "^6.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

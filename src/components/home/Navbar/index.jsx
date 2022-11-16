@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ThemeToggle from '../../common/ThemeToggle';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function Navbar() {
+  const { data: session, status } = useSession();
+
   return (
     <header>
       <div>
@@ -34,8 +37,29 @@ export default function Navbar() {
             </li>
           </ul>
           <div>
-            <Link href='/login'>Sign In</Link>
-            <Link href='/register'>Sign Up</Link>
+            {status === 'authenticated' && (
+              <>
+                <h2 style={{ color: 'blue' }}>Welcome, {session.user.name}</h2>
+                <button onClick={() => signOut()}>Sign Out</button>
+                <img
+                  referrerPolicy='no-referrer'
+                  src={session.user.image}
+                  alt='profile'
+                  style={{
+                    border: '5px solid blue',
+                    width: '75px',
+                    borderRadius: '50px',
+                  }}
+                />
+              </>
+            )}
+
+            {status === 'unauthenticated' && (
+              <>
+                <h2 style={{ color: 'red' }}>Not Authenticated</h2>
+                <button onClick={() => signIn()}>Sign In</button>
+              </>
+            )}
           </div>
           <ThemeToggle />
         </nav>
