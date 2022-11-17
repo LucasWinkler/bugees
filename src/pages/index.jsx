@@ -14,7 +14,6 @@ export default function Home() {
         <title>Home | Bugees</title>
       </Head>
       <Hero />
-      <Button>This is a button</Button>
       <Features />
       <CTA />
       <FAQ />

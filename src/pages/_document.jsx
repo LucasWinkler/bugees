@@ -35,7 +35,7 @@ export default function Document() {
         />
         <link rel='icon' href='/favicon.svg' />
       </Head>
-      <body className='antialiased'>
+      <body className='antialiased bg-gray-900 text-gray-300 text-base'>
         <Main />
         <NextScript />
       </body>
