@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Layout from '../../layouts/Dashboard';
 import { useSession, getSession } from 'next-auth/react';
-import { Role } from '@prisma/client';
 
 export default function Dashboard() {
   const { data: session } = useSession();
@@ -23,7 +22,7 @@ export const getServerSideProps = async context => {
   if (!session) {
     return {
       redirect: {
-        destination: '/',
+        destination: '/api/auth/signin',
       },
     };
   }
