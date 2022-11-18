@@ -6,11 +6,11 @@ export default function Footer() {
     <footer className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10 lg:py-12'>
       <div className='flex flex-col mx-auto justify-center items-center gap-4'>
         <Link
-          className='text-white transition-colors duration-300 hover:text-green-400 inline-block'
+          className='text-white transition-colors duration-300 hover:text-green-400'
           href='/'>
           <span className='sr-only'>Bugees</span>
           <svg
-            className='h-10 sm:h-12'
+            className='h-7 w-auto sm:h-12'
             fill='currentColor'
             width='119'
             height='38'

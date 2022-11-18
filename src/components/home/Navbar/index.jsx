@@ -20,7 +20,7 @@ export default function Navbar() {
           href='/'>
           <span className='sr-only'>Bugees</span>
           <svg
-            className='h-10 sm:h-12'
+            className='h-7 w-auto sm:h-12'
             fill='currentColor'
             width='119'
             height='38'
@@ -33,7 +33,6 @@ export default function Navbar() {
             />
           </svg>
         </Link>
-
         <div className='flex justify-between items-center gap-0 sm:gap-1'>
           {status === 'authenticated' ? (
             <>
