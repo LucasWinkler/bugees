@@ -1,6 +1,6 @@
 export default function Features() {
   return (
-    <section id='features'>
+    <section id='features' className='container'>
       <div>
         <h2>Features</h2>
         <div>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className='container'>
       <div>
         <div>
           <Link className='text-white hover:text-green-400' href='/'>

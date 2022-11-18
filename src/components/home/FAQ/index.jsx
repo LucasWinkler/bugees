@@ -3,7 +3,7 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 export default function FAQ() {
   return (
-    <section id='faq'>
+    <section id='faq' className='container'>
       <div>
         <h2>Frequently Asked Questions</h2>
         <div>
