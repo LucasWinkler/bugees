@@ -1,12 +1,12 @@
 # Bug/Issue Tracker
 
-## Inspiration:
+## Resources:
 
 - CoderFoundry
-  - They have their own bug tracker and they focus on fullstack development.
+  - They have their own bug tracker
   - https://www.youtube.com/watch?v=vG824vBdYY8
 - Sam Meech-Ward
-  - Amazing at explaning
+  - Amazing explanations
   - Great tutorials for React and Next including implementing Prisma, Next Auth etc... - https://www.zoho.com/bugtracker/
 
 ## Project Details
@@ -15,8 +15,7 @@ Name:
 
 - Bugees
   - Will probably use this one
-  - Bug-ees
-  - Bugalog
+- Bug-ees
 
 Description:
 
@@ -27,6 +26,7 @@ Stack:
 - Next
 - Next Auth
 - Prisma
+- TailwindCSS
 - Heroicons
 
 ## Models
