@@ -6,8 +6,8 @@ export default function FAQ() {
   return (
     <section
       id='faq'
-      className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-[6rem] pt-4 lg:py-24'>
-      <h2 className='text-white text-center font-bold text-4xl xl:text-5xl'>
+      className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-[6rem] pt-14 lg:py-24'>
+      <h2 className='text-white text-center font-bold text-3xl md:text-4xl xl:text-5xl'>
         Frequently asked questions
       </h2>
       <div className='mx-auto w-full max-w-md rounded bg-neutral-800 p-2 mt-14'>
