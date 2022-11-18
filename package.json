@@ -30,15 +30,16 @@
     "eslint-config-next": "13.0.3",
     "next": "13.0.3",
     "next-auth": "^4.16.4",
-    "next-themes": "^0.2.1",
     "nodemailer": "^6.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.13",
     "dotenv-cli": "^6.0.0",
     "eslint-config-prettier": "^8.5.0",
+    "postcss": "^8.4.19",
     "prisma": "^4.6.1",
-    "sass": "^1.56.1"
+    "tailwindcss": "^3.2.4"
   }
 }

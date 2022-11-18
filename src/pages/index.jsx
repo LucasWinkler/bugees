@@ -5,7 +5,6 @@ import CTA from '../components/home/CTA';
 import Contact from '../components/home/Contact';
 import FAQ from '../components/home/FAQ';
 import Features from '../components/home/Features';
-import Button from '../components/common/Button';
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
         <title>Home | Bugees</title>
       </Head>
       <Hero />
-      <Button>This is a button</Button>
       <Features />
       <CTA />
       <FAQ />
