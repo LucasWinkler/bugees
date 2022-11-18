@@ -37,22 +37,22 @@ export default function Navbar() {
             {status === 'authenticated' ? (
               <>
                 <Link
-                  className='text-white py-2 px-2 text-sm sm:text-base'
+                  className='text-white py-2 px-2 text-sm sm:text-base group hover:text-gray-300 transition-colors duration-300'
                   href='/dashboard'>
                   Dashboard
                 </Link>
 
                 <Menu as='div' className='relative ml-3'>
                   <>
-                    <Menu.Button className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'>
+                    <Menu.Button className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 focus:ring-offset-gray-800   hover:outline-none hover:ring-2 hover:ring-green-300 hover:ring-offset-2 hover:ring-offset-gray-800 transition-all duration-300 overflow-hidden'>
                       <span className='sr-only'>Open user menu</span>
                       <Image
-                        className='rounded-full h-12 w-12 '
+                        className='rounded-full h-12 w-12 hover:scale-110 transition-transform duration-500'
                         referrerPolicy='no-referrer'
                         src={session.user.image}
                         alt='profile'
-                        width={48}
-                        height={48}
+                        width={100}
+                        height={100}
                         priority
                       />
                     </Menu.Button>
@@ -71,7 +71,7 @@ export default function Navbar() {
                           <Link
                             className={classNames(
                               active ? 'bg-gray-100' : '',
-                              'block px-4 py-2 text-sm text-gray-700'
+                              'block px-4 py-2 text-sm text-gray-700 '
                             )}
                             href='/dashboard'>
                             Dashboard
@@ -109,7 +109,7 @@ export default function Navbar() {
             ) : (
               <>
                 <button
-                  className=' text-white text-sm sm:text-base py-2 px-4 rounded inline-flex items-center'
+                  className='text-white text-sm sm:text-base py-2 px-4 rounded inline-flex items-center group hover:text-gray-300 transition-colors duration-300'
                   onClick={() => signIn()}>
                   <ArrowRightOnRectangleIcon className='w-6 h-6 mr-2' />
                   Sign In
