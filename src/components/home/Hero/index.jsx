@@ -5,7 +5,7 @@ import heroImage from '../../../../public/images/hero-placeholder.png';
 
 export default function Hero() {
   return (
-    <section id='hero' className='container'>
+    <section id='hero' className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
       <div className='pt-10 py-24 sm:pt-16 sm:px-6  text-center lg:flex lg:items-center lg:px-0 lg:text-left lg:pt-16 lg:pb-16 lg:gap-12 relative'>
         <div className='lg:w-1/2'>
           <h1 className='text-4xl font-extrabold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl'>

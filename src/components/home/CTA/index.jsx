@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function CTA() {
   return (
     <section id='cta' className='bg-green-500 py-14'>
-      <div className='container text-center flex gap-1 flex-col'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex gap-1 flex-col'>
         <h2 className='text-white font-bold text-4xl'>
           What are you waiting for? It&apos;s free!
         </h2>

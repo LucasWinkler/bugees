@@ -13,7 +13,7 @@ export default function Navbar() {
   const { data: session, status } = useSession();
 
   return (
-    <header className='container py-4 sm:py-6 lg:py-8'>
+    <header className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8'>
       <nav className='text-white flex justify-between  items-center'>
         <Link
           className='text-white transition-colors duration-300 hover:text-green-400'
@@ -45,10 +45,10 @@ export default function Navbar() {
 
               <Menu as='div' className='relative ml-3'>
                 <>
-                  <Menu.Button className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 focus:ring-offset-gray-800   hover:outline-none hover:ring-2 hover:ring-green-300 hover:ring-offset-2 hover:ring-offset-gray-800 transition-all duration-300 overflow-hidden'>
+                  <Menu.Button className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 focus:ring-offset-gray-800   hover:outline-none hover:ring-2 hover:ring-green-300 hover:ring-offset-2 hover:ring-offset-gray-800 transition duration-200 overflow-hidden ease-in'>
                     <span className='sr-only'>Open user menu</span>
                     <Image
-                      className='rounded-full h-12 w-12 hover:scale-110 transition-transform duration-500'
+                      className='rounded-full h-12 w-12 hover:scale-[1.18] transition-transform duration-[400ms] delay-100'
                       referrerPolicy='no-referrer'
                       src={session.user.image}
                       alt='profile'
