@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 export default function CTA() {
   return (
-    <section id='cta' className='container bg-green-500 py-14'>
-      <div className='text-center flex gap-1 flex-col'>
+    <section id='cta' className='bg-green-500 py-14'>
+      <div className='container text-center flex gap-1 flex-col'>
         <h2 className='text-white font-bold text-4xl'>
           What are you waiting for? It&apos;s free!
         </h2>
