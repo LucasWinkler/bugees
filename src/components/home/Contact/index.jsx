@@ -8,6 +8,7 @@ export default function Contact() {
           Got any more questions?
         </h2>
         <Link
+          scroll={false}
           className='text-white border-2 border-white p-3 px-6 flex justify-between items-center gap-5 font-medium text-lg mt-6 rounded self-center'
           href='mailto:hello@lucaswinkler.dev'>
           hello@lucaswinkler.dev
