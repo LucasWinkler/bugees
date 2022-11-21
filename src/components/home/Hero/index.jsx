@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import heroImage from '../../../../public/images/hero-placeholder.png';
+import Button from '../../common/Button';
 
 export default function Hero() {
   return (
@@ -32,6 +33,7 @@ export default function Hero() {
               />
             </svg>
           </Link>
+          <Button>Get Started</Button>
         </div>
         <div className='lg:w-1/2 mt-12 lg:mt-0 lg:relative lg:translate-x-[7rem]'>
           <Image

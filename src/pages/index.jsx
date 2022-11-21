@@ -24,3 +24,5 @@ export default function Home() {
 Home.getLayout = function (page) {
   return <Layout>{page}</Layout>;
 };
+
+Home.auth = true;
