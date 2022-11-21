@@ -21,7 +21,7 @@ async function main() {
   //     },
   //   });
   //   console.log({ alice, bob });
-  console.log('Seeding disabled');
+  console.log('--Seeding disabled--');
 }
 main()
   .then(async () => {
