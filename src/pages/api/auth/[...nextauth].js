@@ -18,13 +18,14 @@ export const authOptions = {
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
-  secret: process.env.JWT_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async session({ session, token, user }) {
       session.user.role = user.role;
       return session;
     },
   },
+  debug: false,
 };
 
 export default NextAuth(authOptions);

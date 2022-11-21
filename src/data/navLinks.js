@@ -1,33 +1,33 @@
-import { Cog6ToothIcon } from '@heroicons/react/24/outline';
+import {
+  Cog6ToothIcon,
+  HomeIcon,
+  BugAntIcon,
+  DocumentDuplicateIcon,
+} from '@heroicons/react/24/outline';
 
 export const PrimaryNavigationLinks = [
   {
     name: 'Home',
-    path: '/',
-    disabled: false,
+    href: '/',
   },
   {
     name: 'Features',
-    path: '/#features',
-    disabled: false,
+    href: '/#features',
   },
   {
     name: 'FAQ',
-    path: '/#faq',
-    disabled: false,
+    href: '/#faq',
   },
   {
     name: 'Contact',
-    path: '/#contact',
-    disabled: false,
+    href: '/#contact',
   },
 ];
 
 export const AccountDropdownLinks = [
   {
     name: 'Account Settings',
-    path: '/account',
-    disabled: false,
+    href: '/account',
     icon: Cog6ToothIcon,
   },
 ];
@@ -35,20 +35,17 @@ export const AccountDropdownLinks = [
 export const DashboardSidebarLinks = [
   {
     name: 'Overview',
-    path: '/dashboard',
-    disabled: false,
-    icon: null,
+    href: '/dashboard',
+    icon: HomeIcon,
   },
   {
     name: 'Projects',
-    path: '/dashboard/projects',
-    disabled: false,
-    icon: null,
+    href: '/dashboard/projects',
+    icon: DocumentDuplicateIcon,
   },
   {
     name: 'Bugs',
-    path: '/dashboard/bugs',
-    disabled: false,
-    icon: null,
+    href: '/dashboard/bugs',
+    icon: BugAntIcon,
   },
 ];

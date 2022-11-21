@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import Layout from '../../layouts/Dashboard';
-import { useSession, getSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import Button from '../../components/common/Button';
 import AccountDropdown from '../../components/common/AccountDropdown';
+import { authOptions } from '../api/auth/[...nextauth]';
+import { unstable_getServerSession } from 'next-auth/next';
 
 export default function Dashboard() {
   const { data: session } = useSession();
@@ -23,24 +25,33 @@ export default function Dashboard() {
         }}>
         Home
       </Button>
-      <p>Welcome, {session.user.name}</p>
+      <p>Welcome, {session?.user.name}</p>
     </>
   );
 }
 
-export const getServerSideProps = async context => {
-  const session = await getSession(context);
+export async function getServerSideProps(context) {
+  const session = await unstable_getServerSession(
+    context.req,
+    context.res,
+    authOptions
+  );
+
   if (!session) {
     return {
       redirect: {
-        destination: '/api/auth/signin',
+        destination: `/api/auth/signin?callbackUrl=/dashboard`,
+        permanent: false,
       },
     };
   }
+
   return {
-    props: { session },
+    props: {
+      session,
+    },
   };
-};
+}
 
 Dashboard.getLayout = function (page) {
   return <Layout>{page}</Layout>;

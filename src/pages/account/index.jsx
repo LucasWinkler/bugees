@@ -1,8 +1,10 @@
-import { useSession, getSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import AccountDropdown from '../../components/common/AccountDropdown';
 import Layout from '../../layouts/Dashboard';
+import { authOptions } from '../api/auth/[...nextauth]';
+import { unstable_getServerSession } from 'next-auth/next';
 
-function Account() {
+export default function Account() {
   const { data: session } = useSession();
 
   return (
@@ -14,22 +16,28 @@ function Account() {
   );
 }
 
-export default Account;
-
-export const getServerSideProps = async context => {
-  const session = await getSession(context);
+export async function getServerSideProps(context) {
+  const session = await unstable_getServerSession(
+    context.req,
+    context.res,
+    authOptions
+  );
 
   if (!session) {
     return {
       redirect: {
-        destination: '/api/auth/signin',
+        destination: `/api/auth/signin?callbackUrl=/account`,
+        permanent: false,
       },
     };
   }
+
   return {
-    props: { session },
+    props: {
+      session,
+    },
   };
-};
+}
 
 Account.getLayout = function (page) {
   return <Layout>{page}</Layout>;

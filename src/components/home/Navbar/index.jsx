@@ -28,29 +28,27 @@ export default function Navbar() {
             />
           </svg>
         </Link>
-        {status !== 'loading' && (
-          <div className='flex justify-between items-center gap-0 sm:gap-1'>
-            {status === 'authenticated' ? (
-              <>
-                <Link
-                  className='text-neutral-300 py-2 px-2 text-sm sm:text-base group hover:text-neutral-100 transition-colors duration-300'
-                  href='/dashboard'>
-                  Dashboard
-                </Link>
-                <AccountDropdown />
-              </>
-            ) : (
-              <>
-                <button
-                  className='text-neutral-300 text-sm sm:text-base py-2 px-4 rounded inline-flex items-center group hover:text-neutral-100 transition-colors duration-300 gap-2'
-                  onClick={() => signIn()}>
-                  <ArrowRightOnRectangleIcon className='w-6 h-6' />
-                  Sign In
-                </button>
-              </>
-            )}
-          </div>
-        )}
+        <div className='flex justify-between items-center gap-0 sm:gap-1'>
+          {status === 'authenticated' ? (
+            <>
+              <Link
+                className='text-neutral-300 py-2 px-2 text-sm sm:text-base group hover:text-neutral-100 transition-colors duration-300'
+                href='/dashboard'>
+                Dashboard
+              </Link>
+              <AccountDropdown />
+            </>
+          ) : (
+            <>
+              <button
+                className='text-neutral-300 text-sm sm:text-base py-2 px-4 rounded inline-flex items-center group hover:text-neutral-100 transition-colors duration-300 gap-2'
+                onClick={() => signIn()}>
+                <ArrowRightOnRectangleIcon className='w-6 h-6' />
+                Sign In
+              </button>
+            </>
+          )}
+        </div>
       </nav>
     </header>
   );

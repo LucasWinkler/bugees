@@ -47,7 +47,7 @@ const AccountDropdown = () => {
                     active ? 'bg-neutral-800' : '',
                     'block px-4 py-2 text-sm text-neutral-300 rounded'
                   )}
-                  href={link.path}>
+                  href={link.href}>
                   <div className='flex items-center gap-2'>
                     <link.icon className='h-5 w-5' />
                     {link.name}
