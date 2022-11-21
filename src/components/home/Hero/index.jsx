@@ -33,7 +33,6 @@ export default function Hero() {
               />
             </svg>
           </Link>
-          <Button>Get Started</Button>
         </div>
         <div className='lg:w-1/2 mt-12 lg:mt-0 lg:relative lg:translate-x-[7rem]'>
           <Image

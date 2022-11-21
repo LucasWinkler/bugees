@@ -1,9 +1,12 @@
 import Head from 'next/head';
 import Layout from '../../layouts/Dashboard';
 import { useSession, getSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import Button from '../../components/common/Button';
 
 export default function Dashboard() {
   const { data: session } = useSession();
+  const router = useRouter();
 
   return (
     <>
@@ -12,6 +15,12 @@ export default function Dashboard() {
       </Head>
 
       <h1>Dashboard - Overview</h1>
+      <Button
+        onClick={() => {
+          router.push('/');
+        }}>
+        Home
+      </Button>
       <p>Welcome, {session.user.name}</p>
     </>
   );

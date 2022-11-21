@@ -6,9 +6,7 @@ const Button = ({ onClick, type, children, className, disabled, ...props }) => {
       disabled={disabled}
       onClick={onClick}
       type={type}
-      className={
-        'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded'
-      }
+      className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded disabled:cursor-not-allowed disabled:opacity-50`}
       {...props}>
       {children}
     </button>
@@ -26,8 +24,6 @@ Button.propTypes = {
 Button.defaultProps = {
   onClick: () => {},
   disabled: false,
-  className:
-    'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded',
   type: 'button',
 };
 

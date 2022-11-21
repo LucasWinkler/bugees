@@ -10,11 +10,11 @@ export default function FAQ() {
       <h2 className='text-white text-center font-bold text-3xl md:text-4xl xl:text-5xl'>
         Frequently asked questions
       </h2>
-      <div className='mx-auto w-full max-w-md rounded bg-neutral-800 p-2 mt-14'>
+      <div className='mx-auto w-full max-w-md rounded bg-neutral-800 p-2 mt-14 space-y-1 > *'>
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className='flex w-full justify-between rounded-sm bg-neutral-800 px-4 py-4 text-left text-sm font-medium text-white hover:bg-neutral-900 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75'>
+              <Disclosure.Button className='flex w-full justify-between rounded-sm bg-neutral-800 px-4 py-3 text-left text-sm font-medium text-white hover:bg-neutral-900 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75'>
                 <span>How much does Bugees cost?</span>
                 <ChevronRightIcon
                   className={`${
@@ -29,7 +29,7 @@ export default function FAQ() {
                 leave='transition duration-75 ease-out'
                 leaveFrom='transform scale-100 opacity-100'
                 leaveTo='transform scale-95 opacity-0'>
-                <Disclosure.Panel className='px-4 pt-1 pb-6 text-sm'>
+                <Disclosure.Panel className='px-4 pt-1 pb-3 text-sm'>
                   Bugees is 100% free and always will be. This project was made
                   to help{' '}
                   <Link
@@ -46,7 +46,7 @@ export default function FAQ() {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className='flex w-full justify-between rounded-sm bg-neutral-800 px-4 py-4 text-left text-sm font-medium text-white hover:bg-neutral-900 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75'>
+              <Disclosure.Button className='flex w-full justify-between rounded-sm bg-neutral-800 px-4 py-3 text-left text-sm font-medium text-white hover:bg-neutral-900 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75'>
                 <span>How much does Bugees cost?</span>
                 <ChevronRightIcon
                   className={`${
@@ -61,7 +61,7 @@ export default function FAQ() {
                 leave='transition duration-75 ease-out'
                 leaveFrom='transform scale-100 opacity-100'
                 leaveTo='transform scale-95 opacity-0'>
-                <Disclosure.Panel className='px-4 pt-1 pb-6 text-sm'>
+                <Disclosure.Panel className='px-4 pt-1 pb-3 text-sm'>
                   Bugees is 100% free and always will be. This project was made
                   to help{' '}
                   <Link
@@ -78,7 +78,7 @@ export default function FAQ() {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className='flex w-full justify-between rounded-sm bg-neutral-800 px-4 py-4 text-left text-sm font-medium text-white hover:bg-neutral-900 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75'>
+              <Disclosure.Button className='flex w-full justify-between rounded-sm bg-neutral-800 px-4 py-3 text-left text-sm font-medium text-white hover:bg-neutral-900 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75'>
                 <span>How much does Bugees cost?</span>
                 <ChevronRightIcon
                   className={`${
@@ -93,7 +93,7 @@ export default function FAQ() {
                 leave='transition duration-75 ease-out'
                 leaveFrom='transform scale-100 opacity-100'
                 leaveTo='transform scale-95 opacity-0'>
-                <Disclosure.Panel className='px-4 pt-1 pb-6 text-sm'>
+                <Disclosure.Panel className='px-4 pt-1 pb-3 text-sm'>
                   Bugees is 100% free and always will be. This project was made
                   to help{' '}
                   <Link
