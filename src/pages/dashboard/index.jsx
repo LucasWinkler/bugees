@@ -3,6 +3,7 @@ import Layout from '../../layouts/Dashboard';
 import { useSession, getSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import Button from '../../components/common/Button';
+import AccountDropdown from '../../components/common/AccountDropdown';
 
 export default function Dashboard() {
   const { data: session } = useSession();
@@ -15,6 +16,7 @@ export default function Dashboard() {
       </Head>
 
       <h1>Dashboard - Overview</h1>
+      <AccountDropdown />
       <Button
         onClick={() => {
           router.push('/');
