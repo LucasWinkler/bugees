@@ -34,6 +34,10 @@ export default function Document() {
           content='summary_large_image'
         />
         <link rel='icon' href='/favicon.svg' />
+        <meta
+          name='google-site-verification'
+          content='-XwKpcZoOCHdpTSfmwxdZQ9DY60vqyJGTS7qE2iwJpY'
+        />
       </Head>
       <body className='antialiased bg-dark-blueish-gray text-gray-300 text-base overflow-x-hidden'>
         <Main />
