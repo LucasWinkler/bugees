@@ -1,116 +1,60 @@
-# Bug/Issue Tracker
+<h1 align="center">
+  Bugees | Bug Tracker
+</h1>
+<p align="center">
+  A bug tracker built Next.js, Tailwind CSS, Prisma and more.
+</p>
 
-## Resources:
+## Getting Started
 
-- CoderFoundry
-  - They have their own bug tracker
-  - https://www.youtube.com/watch?v=vG824vBdYY8
-- Sam Meech-Ward
-  - Amazing explanations
-  - Great tutorials for React and Next including implementing Prisma, Next Auth etc... - https://www.zoho.com/bugtracker/
+Follow these steps in order to get the website up and running locally on your machine.
 
-## Project Details
+### 1. Clone the repository then navigate to the root directory
 
-Name:
+### 2. Install all required dependencies
 
-- Bugees
-  - Will probably use this one
-- Bug-ees
+```sh
+npm install
+```
 
-Description:
+### 3. Setup your development database
 
-- Your personal bug tracker that allows you to efficiently hunt down those pesky bugs.
+- I use a local PostgreSQL database for development.
 
-Stack:
+### 4. Setup your environment variables. An example file is provided.
 
-- Next
-- Next Auth
-- Prisma
-- TailwindCSS
-- Heroicons
+- File must be named `.env.local` for development.
+- Ensure you use the custom scripts that use this file.
 
-## Models
+### 5. Create/sync the database
 
-User:
+```sh
+npm run migrate:dev
+```
 
-- Name
-- Email
-- Role
-- User
-- Manager
-  - Archive their projects
-  - Invite/kick users from their projects
-- Projects
-- Comments
+### 6. Host a local development server
 
-Bug:
+```sh
+npm run dev
+```
 
-- Name
-- Description
-- Status
-  - Open
-  - Resolved
-  - In Progress
-- Priority
-  - None
-  - Low
-  - Medium
-  - High
-- Assignee
-- Reporter
-- Comment
-- Created date
-- Updated date
-- History
-  - Bug
-  - Edited by
-  - Old value
-  - New value
-  - Date changed
+## Production
 
-Project:
+### 1. Host on your preferred platform
 
-- Name
-- Description
-- Created by
-- Users
-- Bugs
-- Is archived
-- Comments
+- Here are my current hosts:
 
-Comment:
+  - Website: Vercel
+  - Database: Railway
 
-- Description
-- Created by
+### 2. Use this build command
 
-## Extra Notes
+```sh
+npm run production:build
+```
 
-Pages:
+## Contact
 
-- Landing Page
-- Login & Signup
-- Demo user link
-- Dashboard
-  - Overview
-  - Stats and charts
-  - Bugs by priority
-  - Bugs by type
-  - View projects (all projects the user is in)
-  - View reported bugs
-  - View assigned bugs
-  - View all bugs (all bugs from all projects that the user is in)
-  - Users settings
-  - [ADMIN]
-    - Manage user roles
-    - Manage all projects
-    - Manage all bugs
-
-Roles:
-
-- User
-- Project Manager
-  - Invite/remove user to/from project
-  - Archive project
-- Admin
-  - Add/remove users roles
-  - CRUD on all projects and bugs
+- [LinkedIn](https://linkedin.com/in/lucas-winkler)
+- [Github](https://github.com/lucaswinkler)
+- [Email](mailto:lucaswinkler@gmail.com)
