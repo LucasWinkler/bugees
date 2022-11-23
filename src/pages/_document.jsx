@@ -74,6 +74,7 @@ export default function Document() {
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#188c1b' />
         <meta name='msapplication-TileColor' content='#188c1b' />
         <meta name='theme-color' content='#188c1b' />
+        <link rel='manifest' href='/site.webmanifest' />
         <meta
           name='google-site-verification'
           content='-XwKpcZoOCHdpTSfmwxdZQ9DY60vqyJGTS7qE2iwJpY'
