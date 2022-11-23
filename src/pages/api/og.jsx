@@ -4,21 +4,22 @@ export const config = {
   runtime: 'experimental-edge',
 };
 
-export default function og() {
+export default function handler(req) {
   return new ImageResponse(
     (
       <div
+        tw='bg-neutral-900'
         style={{
-          fontSize: 128,
-          background: 'white',
+          fontSize: 68,
           width: '100%',
           height: '100%',
           display: 'flex',
           textAlign: 'center',
           alignItems: 'center',
           justifyContent: 'center',
+          fontWeight: '700',
         }}>
-        Bugees - Bug Tracker (Testing vercel/og)
+        <span tw='text-white'>Bugees | Bug Tracker</span>
       </div>
     ),
     {

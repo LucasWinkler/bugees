@@ -12,7 +12,7 @@ const Seo = {
       url: 'https://bugees.vercel.app/api/og',
       width: '1200',
       height: '630',
-      alt: 'Bugees - Bug Tracker',
+      alt: 'Bugees | Bug Tracker',
       type: 'website',
     },
   },
