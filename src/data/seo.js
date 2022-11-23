@@ -9,7 +9,7 @@ const Seo = {
     description:
       'Your new best friend that will help you track down those pesky bugs.',
     image: {
-      url: 'http://localhost:3000/api/og',
+      url: 'https://bugees.vercel.app/api/og',
       width: '1200',
       height: '630',
       alt: 'Bugees - Bug Tracker',
