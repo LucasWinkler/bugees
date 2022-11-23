@@ -3,8 +3,8 @@ import { Inter } from '@next/font/google';
 import '../styles/globals.css';
 
 const inter = Inter({
-  weight: ['300', '400', '500', '600', '700', '800'],
   subsets: ['latin'],
+  variable: '--font-inter',
 });
 
 export default function App({
@@ -14,16 +14,11 @@ export default function App({
   const getLayout = Component.getLayout || (page => page);
 
   return (
-    <>
-      <style jsx global>{`
-        html {
-          font-family: ${inter.style.fontFamily};
-        }
-      `}</style>
-
+    <div
+      className={`${inter.variable} font-sans antialiased bg-dark-blueish-gray text-gray-300 text-base overflow-x-hidden`}>
       <SessionProvider session={session}>
         {getLayout(<Component {...pageProps} />)}
       </SessionProvider>
-    </>
+    </div>
   );
 }

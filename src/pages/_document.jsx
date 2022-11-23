@@ -39,7 +39,7 @@ export default function Document() {
           content='-XwKpcZoOCHdpTSfmwxdZQ9DY60vqyJGTS7qE2iwJpY'
         />
       </Head>
-      <body className='antialiased bg-dark-blueish-gray text-gray-300 text-base overflow-x-hidden'>
+      <body>
         <Main />
         <NextScript />
       </body>
