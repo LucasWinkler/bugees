@@ -25,6 +25,11 @@ export default function Document() {
           content={seo.openGraph.image.url}
         />
         <meta
+          key='og_image_alt'
+          property='og:image:alt'
+          content={seo.openGraph.image.alt}
+        />
+        <meta
           key='og_image_width'
           property='og:image:width'
           content={seo.openGraph.image.width}
