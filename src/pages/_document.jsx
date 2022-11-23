@@ -18,18 +18,34 @@ export default function Document() {
           property='og:description'
           content={seo.openGraph.description}
         />
+        <meta key='og_type' property='og:type' content={seo.openGraph.type} />
         <meta
-          key='twitter:site'
+          key='og_image'
+          property='og:image'
+          content={seo.openGraph.image.url}
+        />
+        <meta
+          key='og_image_width'
+          property='og:image:width'
+          content={seo.openGraph.image.width}
+        />
+        <meta
+          key='og_image_height'
+          property='og:image:height'
+          content={seo.openGraph.image.height}
+        />
+        <meta
+          key='twitter_site'
           name='twitter:site'
           content={seo.twitter.site}
         />
         <meta
-          key='twitter:creator'
+          key='twitter_creator'
           name='twitter:creator'
           content={seo.twitter.handle}
         />
         <meta
-          key='twitter:card'
+          key='twitter_card'
           name='twitter:card'
           content='summary_large_image'
         />
