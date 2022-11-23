@@ -54,7 +54,26 @@ export default function Document() {
           name='twitter:card'
           content='summary_large_image'
         />
-        <link rel='icon' href='/favicon.svg' />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicon-16x16.png'
+        />
+        <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#188c1b' />
+        <meta name='msapplication-TileColor' content='#188c1b' />
+        <meta name='theme-color' content='#188c1b' />
         <meta
           name='google-site-verification'
           content='-XwKpcZoOCHdpTSfmwxdZQ9DY60vqyJGTS7qE2iwJpY'
