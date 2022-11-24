@@ -6,6 +6,7 @@ import classNames from '../../../util/joinClassNames';
 import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { PowerIcon } from '@heroicons/react/24/outline';
+import titleCase from '../../../util/titleCase';
 
 const AvatarMenu = () => {
   const { data: session, status } = useSession();
@@ -15,7 +16,7 @@ const AvatarMenu = () => {
   }
 
   return (
-    <Menu as='div' className='relative ml-3'>
+    <Menu as='div' className='relative m-1 inline-block text-left'>
       <>
         <Menu.Button className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 focus:ring-offset-gray-800   hover:outline-none hover:ring-2 hover:ring-green-300 hover:ring-offset-2 hover:ring-offset-gray-800 transition duration-200 overflow-hidden ease-in'>
           <span className='sr-only'>Open user menu</span>
@@ -39,6 +40,19 @@ const AvatarMenu = () => {
         leaveFrom='transform opacity-100 scale-100'
         leaveTo='transform opacity-0 scale-95'>
         <Menu.Items className='absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-neutral-900 p-2 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-neutral-700'>
+          <Menu.Item>
+            {({ active }) => (
+              <>
+                <span className='block px-4 py-2 text-sm text-neutral-300 rounded'>
+                  {session.user.name}
+                </span>
+                <span className='block px-4 py-2 text-sm text-neutral-400 rounded'>
+                  Role: {titleCase(session.user.role)}
+                </span>
+              </>
+            )}
+          </Menu.Item>
+          <div className='separator'></div>
           {AvatarMenuLinks.map(link => (
             <Menu.Item key={link.name}>
               {({ active }) => (
@@ -62,7 +76,7 @@ const AvatarMenu = () => {
               <button
                 className={classNames(
                   active ? 'bg-neutral-800' : '',
-                  'block px-4 py-2 text-sm text-red-500 opacity-95 rounded w-[100%] text-left'
+                  'block px-4 py-2 text-sm text-red-500 opacity-95 rounded w-[100%]'
                 )}
                 onClick={() => signOut()}>
                 <div className='flex items-center gap-2'>

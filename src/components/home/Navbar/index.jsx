@@ -1,6 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession, signIn } from 'next-auth/react';
 import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
 import AvatarMenu from '../../common/AvatarMenu';
 
