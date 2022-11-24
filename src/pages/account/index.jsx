@@ -1,5 +1,5 @@
 import { useSession } from 'next-auth/react';
-import AccountDropdown from '../../components/common/AccountDropdown';
+import AvatarMenu from '../../components/common/AvatarMenu';
 import Layout from '../../layouts/Dashboard';
 import { authOptions } from '../api/auth/[...nextauth]';
 import { unstable_getServerSession } from 'next-auth/next';
@@ -11,7 +11,7 @@ export default function Account() {
     <>
       <h2>{session.user.name}</h2>
       <h1>Account Settings</h1>
-      <AccountDropdown />
+      <AvatarMenu />
     </>
   );
 }

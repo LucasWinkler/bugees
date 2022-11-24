@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession, signOut } from 'next-auth/react';
-import { AccountDropdownLinks } from '../../../data/navLinks';
+import { AvatarMenuLinks } from '../../../data/navLinks';
 import classNames from '../../../util/joinClassNames';
 import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { PowerIcon } from '@heroicons/react/24/outline';
 
-const AccountDropdown = () => {
+const AvatarMenu = () => {
   const { data: session, status } = useSession();
 
   if (status !== 'authenticated') {
@@ -39,7 +39,7 @@ const AccountDropdown = () => {
         leaveFrom='transform opacity-100 scale-100'
         leaveTo='transform opacity-0 scale-95'>
         <Menu.Items className='absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-neutral-900 p-2 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-neutral-700'>
-          {AccountDropdownLinks.map(link => (
+          {AvatarMenuLinks.map(link => (
             <Menu.Item key={link.name}>
               {({ active }) => (
                 <Link
@@ -78,4 +78,4 @@ const AccountDropdown = () => {
   );
 };
 
-export default AccountDropdown;
+export default AvatarMenu;

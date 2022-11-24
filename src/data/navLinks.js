@@ -24,7 +24,7 @@ export const PrimaryNavigationLinks = [
   },
 ];
 
-export const AccountDropdownLinks = [
+export const AvatarMenuLinks = [
   {
     name: 'Account Settings',
     href: '/account',

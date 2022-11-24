@@ -3,7 +3,7 @@ import Layout from '../../layouts/Dashboard';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import Button from '../../components/common/Button';
-import AccountDropdown from '../../components/common/AccountDropdown';
+import AvatarMenu from '../../components/common/AvatarMenu';
 import { authOptions } from '../api/auth/[...nextauth]';
 import { unstable_getServerSession } from 'next-auth/next';
 
@@ -18,7 +18,7 @@ export default function Dashboard() {
       </Head>
 
       <h1>Dashboard - Overview</h1>
-      <AccountDropdown />
+      <AvatarMenu />
       <Button
         onClick={() => {
           router.push('/');

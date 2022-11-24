@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
-import AccountDropdown from '../../common/AccountDropdown';
+import AvatarMenu from '../../common/AvatarMenu';
 
 export default function Navbar() {
   const { data: session, status } = useSession();
@@ -15,7 +15,7 @@ export default function Navbar() {
           href='/'>
           <span className='sr-only'>Bugees</span>
           <svg
-            className='h-7 w-auto sm:h-12'
+            className='h-6 w-auto sm:h-8 md:h-9'
             fill='currentColor'
             width='119'
             height='38'
@@ -36,7 +36,7 @@ export default function Navbar() {
                 href='/dashboard'>
                 Dashboard
               </Link>
-              <AccountDropdown />
+              <AvatarMenu />
             </>
           ) : (
             <>
