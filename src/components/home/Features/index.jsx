@@ -7,7 +7,7 @@ export default function Features() {
         Features
       </h2>
       <div className='pt-14 md:pt-24 flex flex-wrap justify-center item-center mx-auto gap-12 xl:gap-[4.25rem]'>
-        <div className='bg-neutral-800 flex flex-col justify-center items-center border-b-4 border-green-300 rounded px-6 py-14 xs:max-w-[18rem] md:px-8 md:py-20 md:max-w-[18rem] lg:max-w-[20rem] xl:max-w-[22rem]'>
+        <div className='bg-neutral-800 flex flex-col justify-center items-center border-b-4 border-green-300 rounded px-6 py-12 xs:max-w-[20rem] md:px-8 md:py-12 xl:py-20 md:max-w-[18rem] lg:max-w-[20rem] xl:max-w-[22rem]'>
           <div className='flex items-center justify-center bg-neutral-900 rounded-full h-20 w-20 mx-auto'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -31,7 +31,7 @@ export default function Features() {
             praesentium eos inventore sunt?
           </p>
         </div>
-        <div className='bg-neutral-800 flex flex-col justify-center items-center border-b-4 border-green-300 rounded px-6 py-14 xs:max-w-[18rem] md:px-8 md:py-20 md:max-w-[18rem] lg:max-w-[20rem] xl:max-w-[22rem]'>
+        <div className='bg-neutral-800 flex flex-col justify-center items-center border-b-4 border-green-300 rounded px-6 py-12 xs:max-w-[20rem] md:px-8 md:py-12 xl:py-20 md:max-w-[18rem] lg:max-w-[20rem] xl:max-w-[22rem]'>
           <div className='flex items-center justify-center bg-neutral-900 rounded-full h-20 w-20 mx-auto'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -55,7 +55,7 @@ export default function Features() {
             praesentium eos inventore sunt?
           </p>
         </div>
-        <div className='bg-neutral-800 flex flex-col justify-center items-center border-b-4 border-green-300 rounded px-6 py-14 xs:max-w-[18rem] md:px-8 md:py-20 md:max-w-[18rem] lg:max-w-[20rem] xl:max-w-[22rem]'>
+        <div className='bg-neutral-800 flex flex-col justify-center items-center border-b-4 border-green-300 rounded px-6 py-12 xs:max-w-[20rem] md:px-8 md:py-12 xl:py-20 md:max-w-[18rem] lg:max-w-[20rem] xl:max-w-[22rem]'>
           <div className='flex items-center justify-center bg-neutral-900 rounded-full h-20 w-20 mx-auto'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
