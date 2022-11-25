@@ -40,7 +40,7 @@ export default function Navbar() {
           ) : (
             <>
               <button
-                className='text-neutral-300 text-sm sm:text-base py-2 px-4 rounded inline-flex items-center group hover:text-neutral-100 transition-colors duration-300 gap-2'
+                className='text-neutral-300 text-sm sm:text-base py-2 rounded inline-flex items-center group hover:text-neutral-100 transition-colors duration-300 gap-2'
                 onClick={() => signIn()}>
                 <ArrowRightOnRectangleIcon className='w-6 h-6' />
                 Sign In
