@@ -3,6 +3,7 @@ import {
   HomeIcon,
   BugAntIcon,
   DocumentDuplicateIcon,
+  QuestionMarkCircleIcon,
 } from '@heroicons/react/24/outline';
 
 export const PrimaryNavigationLinks = [
@@ -29,6 +30,16 @@ export const AvatarMenuLinks = [
     name: 'Account Settings',
     href: '/account',
     icon: Cog6ToothIcon,
+  },
+  {
+    name: 'Link 2',
+    href: '/',
+    icon: QuestionMarkCircleIcon,
+  },
+  {
+    name: 'Link 3',
+    href: '/',
+    icon: QuestionMarkCircleIcon,
   },
 ];
 

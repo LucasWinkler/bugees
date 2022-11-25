@@ -39,16 +39,29 @@ const AvatarMenu = () => {
         leave='transition ease-in duration-75'
         leaveFrom='transform opacity-100 scale-100'
         leaveTo='transform opacity-0 scale-95'>
-        <Menu.Items className='absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-neutral-900 p-2 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-neutral-700'>
+        <Menu.Items className='absolute whitespace-nowrap right-0 z-10 mt-4 min-w-[12rem] origin-top-right rounded-md bg-neutral-900 p-2 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-neutral-700'>
           <Menu.Item>
             {({ active }) => (
               <>
-                <span className='block px-4 py-2 text-sm text-neutral-300 rounded'>
-                  {session.user.name}
-                </span>
-                <span className='block px-4 py-2 text-sm text-neutral-400 rounded'>
-                  Role: {titleCase(session.user.role)}
-                </span>
+                <div className='flex items-center mr-4 py-2'>
+                  <div className='ml-4 mr-3'>
+                    <Image
+                      className='rounded-full border min-w-[3rem] min-h-[3rem] border-neutral-700'
+                      referrerPolicy='no-referrer'
+                      src={session.user.image}
+                      alt='profile'
+                      width={100}
+                      height={100}
+                      priority
+                    />
+                  </div>
+                  <div className='pt-0 pb-1 text-sm text-neutral-300 font-semibold'>
+                    <div className='pt-1 text-neutral-400 font-normal'>
+                      {titleCase(session.user.role)}
+                    </div>
+                    {session.user.name}
+                  </div>
+                </div>
               </>
             )}
           </Menu.Item>
