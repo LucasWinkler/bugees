@@ -7,7 +7,7 @@ import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { PowerIcon } from '@heroicons/react/24/outline';
 import titleCase from '../../../util/titleCase';
-import defaultProfileIcon from '../../../../public/images/default-profile-icon.png';
+import defaultProfileImage from '../../../../public/images/default-profile-image.png';
 
 const AvatarMenu = () => {
   const { data: session, status } = useSession();
@@ -16,7 +16,7 @@ const AvatarMenu = () => {
     return null;
   }
 
-  const profileImage = session.user.image || defaultProfileIcon;
+  const profileImage = session.user.image || defaultProfileImage;
 
   return (
     <Menu as='div' className='relative m-1 inline-block text-left'>

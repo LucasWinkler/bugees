@@ -79,7 +79,7 @@ model User {
   name            String?
   email           String?   @unique
   emailVerified   DateTime?
-  image           String?
+  image           String?   @default("https://bugees.vercel.app/images/default-profile-image.png")
   accounts        Account[]
   sessions        Session[]
   createdAt       DateTime  @default(now())
