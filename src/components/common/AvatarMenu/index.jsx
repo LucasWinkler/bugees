@@ -7,6 +7,7 @@ import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { PowerIcon } from '@heroicons/react/24/outline';
 import titleCase from '../../../util/titleCase';
+import defaultProfileIcon from '../../../../public/images/default-profile-icon.png';
 
 const AvatarMenu = () => {
   const { data: session, status } = useSession();
@@ -14,6 +15,8 @@ const AvatarMenu = () => {
   if (status !== 'authenticated') {
     return null;
   }
+
+  const profileImage = session.user.image || defaultProfileIcon;
 
   return (
     <Menu as='div' className='relative m-1 inline-block text-left'>
@@ -23,7 +26,7 @@ const AvatarMenu = () => {
           <Image
             className='rounded-full h-8 w-8 xs:h-10 xs:w-10 md:h-12 md:w-12 hover:scale-[1.18] transition-transform duration-[400ms] delay-75'
             referrerPolicy='no-referrer'
-            src={session.user.image}
+            src={profileImage}
             alt='profile'
             width={100}
             height={100}
@@ -46,9 +49,9 @@ const AvatarMenu = () => {
                 <div className='flex items-center mr-4 py-2'>
                   <div className='ml-4 mr-3'>
                     <Image
-                      className='rounded-full border min-w-[3rem] min-h-[3rem] border-neutral-700'
+                      className='rounded-full border min-w-[3rem] min-h-[3rem] max-h-[3rem] max-w-[3rem] border-neutral-700'
                       referrerPolicy='no-referrer'
-                      src={session.user.image}
+                      src={profileImage}
                       alt='profile'
                       width={100}
                       height={100}
@@ -59,7 +62,7 @@ const AvatarMenu = () => {
                     <div className='pt-1 text-neutral-400 font-normal'>
                       {titleCase(session.user.role)}
                     </div>
-                    {session.user.name}
+                    {session.user.name || session.user.email}
                   </div>
                 </div>
               </>
