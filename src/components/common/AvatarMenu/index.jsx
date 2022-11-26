@@ -51,7 +51,7 @@ const AvatarMenu = () => {
                 <div className='flex items-center mr-4 py-2'>
                   <div className='ml-4 mr-3'>
                     <Image
-                      className='rounded-full border min-w-[3rem] min-h-[3rem] max-h-[3rem] max-w-[3rem] border-neutral-700'
+                      className='rounded-full min-w-[2.5rem] min-h-[2.5rem] max-h-[2.5rem] max-w-[2.5rem]'
                       referrerPolicy='no-referrer'
                       src={profileImage}
                       alt='profile'
