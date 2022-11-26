@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import heroImage from '../../../../public/images/hero-placeholder.png';
-import Button from '../../common/Button';
 
 export default function Hero() {
   return (

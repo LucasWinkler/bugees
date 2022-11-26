@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -23,7 +22,6 @@ export default function Footer() {
             />
           </svg>
         </Link>
-
         <Link href='https://www.lucaswinkler.dev/'>
           Created by Lucas Winkler
         </Link>

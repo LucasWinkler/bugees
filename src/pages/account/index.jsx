@@ -1,17 +1,17 @@
 import { useSession } from 'next-auth/react';
-import AvatarMenu from '../../components/common/AvatarMenu';
-import Layout from '../../layouts/Dashboard';
 import { authOptions } from '../api/auth/[...nextauth]';
 import { unstable_getServerSession } from 'next-auth/next';
+import Layout from '../../components/layouts/Account';
 
 export default function Account() {
   const { data: session } = useSession();
 
   return (
     <>
-      <h2>{session.user.name}</h2>
+      <h2>
+        {session.user.name} {session.user.email}
+      </h2>
       <h1>Account Settings</h1>
-      <AvatarMenu />
     </>
   );
 }

@@ -1,20 +1,20 @@
 import Link from 'next/link';
 import { useSession, signIn } from 'next-auth/react';
 import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
-import AvatarMenu from '../../common/AvatarMenu';
+import AvatarMenu from '../AvatarMenu';
 
 export default function Navbar() {
   const { data: session, status } = useSession();
 
   return (
-    <header className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8'>
+    <header className='max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5'>
       <nav className='text-white flex justify-between  items-center'>
         <Link
           className='text-white transition-colors duration-300 hover:text-green-400'
           href='/'>
           <span className='sr-only'>Bugees</span>
           <svg
-            className='h-6 w-auto sm:h-8 md:h-9'
+            className='h-6 w-auto sm:h-7'
             fill='currentColor'
             width='119'
             height='38'
@@ -31,7 +31,7 @@ export default function Navbar() {
           {status === 'authenticated' ? (
             <>
               <Link
-                className='text-neutral-300 py-2 px-2 text-sm sm:text-base group hover:text-neutral-100 transition-colors duration-300'
+                className='text-neutral-300 py-2 px-2 text-sm sm:text-[0.9375rem] group hover:text-neutral-100 transition-colors duration-300'
                 href='/dashboard'>
                 Dashboard
               </Link>
@@ -40,7 +40,7 @@ export default function Navbar() {
           ) : (
             <>
               <button
-                className='text-neutral-300 text-sm sm:text-base py-2 rounded inline-flex items-center group hover:text-neutral-100 transition-colors duration-300 gap-2'
+                className='text-neutral-300 text-sm sm:text-[0.9375rem] py-2 rounded inline-flex items-center group hover:text-neutral-100 transition-colors duration-300 gap-2'
                 onClick={() => signIn()}>
                 <ArrowRightOnRectangleIcon className='w-6 h-6' />
                 Sign In

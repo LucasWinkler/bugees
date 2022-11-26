@@ -5,9 +5,8 @@ import { AvatarMenuLinks } from '../../../data/navLinks';
 import classNames from '../../../util/joinClassNames';
 import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
-import { PowerIcon } from '@heroicons/react/24/outline';
+import { PowerIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import titleCase from '../../../util/titleCase';
-import defaultProfileImage from '../../../../public/images/default-profile-image.png';
 
 const AvatarMenu = () => {
   const { data: session, status } = useSession();
@@ -16,22 +15,25 @@ const AvatarMenu = () => {
     return null;
   }
 
-  const profileImage = session.user.image || defaultProfileImage;
+  const profileImage = session.user.image;
 
   return (
     <Menu as='div' className='relative m-1 inline-block text-left'>
       <>
-        <Menu.Button className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 focus:ring-offset-gray-800   hover:outline-none hover:ring-2 hover:ring-green-300 hover:ring-offset-2 hover:ring-offset-gray-800 transition duration-200 overflow-hidden ease-in'>
+        <Menu.Button className='group flex items-center justify-center gap-1'>
           <span className='sr-only'>Open user menu</span>
-          <Image
-            className='rounded-full h-8 w-8 xs:h-10 xs:w-10 md:h-12 md:w-12 hover:scale-[1.18] transition-transform duration-[400ms] delay-75'
-            referrerPolicy='no-referrer'
-            src={profileImage}
-            alt='profile'
-            width={100}
-            height={100}
-            priority
-          />
+          <div className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 focus:ring-offset-gray-800 group-hover:outline-none group-hover:ring-2 group-hover:ring-green-300 group-hover:ring-offset-2 group-hover:ring-offset-gray-800 transition duration-200 overflow-hidden ease-in'>
+            <Image
+              className='rounded-full h-8 w-8 xs:h-9 xs:w-9 group-hover:scale-[1.18] transition-transform duration-[400ms] delay-75'
+              referrerPolicy='no-referrer'
+              src={profileImage}
+              alt={`${session.user.name} profile image`}
+              width={100}
+              height={100}
+              priority
+            />
+          </div>
+          <ChevronDownIcon className='text-neutral-300 group-hover:text-neutral-100 transition duration-200 ease-in h-6 w-6' />
         </Menu.Button>
       </>
       <Transition

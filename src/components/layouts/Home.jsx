@@ -1,6 +1,6 @@
-import Navbar from '../components/home/Navbar';
-import Footer from '../components/home/Footer';
-import SkipNavigation from '../components/home/SkipNavigation';
+import Navbar from '../common/Navbar';
+import Footer from '../home/Footer';
+import SkipNavigation from '../home/SkipNavigation';
 
 export default function Home({ children }) {
   return (

@@ -1,8 +1,8 @@
 import { authOptions } from './api/auth/[...nextauth]';
 import { unstable_getServerSession } from 'next-auth/next';
-
 import Head from 'next/head';
-import Layout from '../layouts/Home';
+
+import Layout from '../components/layouts/Home';
 import Hero from '../components/home/Hero';
 import CTA from '../components/home/CTA';
 import Contact from '../components/home/Contact';
