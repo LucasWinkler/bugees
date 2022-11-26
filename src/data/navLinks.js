@@ -3,6 +3,7 @@ import {
   HomeIcon,
   BugAntIcon,
   DocumentDuplicateIcon,
+  Squares2X2Icon,
 } from '@heroicons/react/24/outline';
 
 export const PrimaryNavigationLinks = [
@@ -31,7 +32,12 @@ export const AvatarMenuLinks = [
     icon: HomeIcon,
   },
   {
-    name: 'Settings',
+    name: 'Dashboard',
+    href: '/dashboard',
+    icon: Squares2X2Icon,
+  },
+  {
+    name: 'Account Settings',
     href: '/account',
     icon: Cog6ToothIcon,
   },

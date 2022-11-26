@@ -60,11 +60,11 @@ const AvatarMenu = () => {
                       priority
                     />
                   </div>
-                  <div className='pt-0 pb-1 text-sm text-neutral-300 font-semibold'>
-                    <div className='pt-1 text-neutral-400 font-normal'>
+                  <div className='text-sm text-neutral-300 font-semibold'>
+                    {session.user.name}
+                    <div className='text-neutral-400 font-normal'>
                       {titleCase(session.user.role)}
                     </div>
-                    {session.user.name || session.user.email}
                   </div>
                 </div>
               </>
@@ -81,7 +81,7 @@ const AvatarMenu = () => {
                   )}
                   href={link.href}>
                   <div className='flex items-center gap-2'>
-                    <link.icon className='h-5 w-5' />
+                    <link.icon className='h-[1.15rem] w-auto' />
                     {link.name}
                   </div>
                 </Link>
