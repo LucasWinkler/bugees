@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {string} str The string to convert to title case
+ * @returns {string} The string converted to title case
+ */
 export default function titleCase(str) {
   return str
     .toLowerCase()

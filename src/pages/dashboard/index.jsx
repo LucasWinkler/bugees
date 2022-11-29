@@ -1,10 +1,12 @@
-import Head from 'next/head';
-import Layout from '../../components/layouts/Dashboard';
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
-import Button from '../../components/common/Button';
-import { authOptions } from '../api/auth/[...nextauth]';
 import { unstable_getServerSession } from 'next-auth/next';
+import { useSession } from 'next-auth/react';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+
+import seo from 'data/seo';
+import Button from '../../components/common/Button';
+import Layout from '../../components/dashboard/Layout';
+import { authOptions } from '../api/auth/[...nextauth]';
 
 export default function Dashboard() {
   const { data: session } = useSession();
@@ -13,7 +15,7 @@ export default function Dashboard() {
   return (
     <>
       <Head>
-        <title>Overview | Bugees</title>
+        <title>{`Overview | ${seo.title}`}</title>
       </Head>
 
       <h1>Dashboard - Overview</h1>
@@ -27,6 +29,10 @@ export default function Dashboard() {
     </>
   );
 }
+
+Dashboard.getLayout = function (page) {
+  return <Layout>{page}</Layout>;
+};
 
 export async function getServerSideProps(context) {
   const session = await unstable_getServerSession(
@@ -50,7 +56,3 @@ export async function getServerSideProps(context) {
     },
   };
 }
-
-Dashboard.getLayout = function (page) {
-  return <Layout>{page}</Layout>;
-};

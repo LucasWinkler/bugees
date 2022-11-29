@@ -1,4 +1,4 @@
-const Seo = {
+const seo = {
   title: 'Bugees',
   description:
     'Your new best friend that will help you track down those pesky bugs.',
@@ -23,4 +23,4 @@ const Seo = {
   },
 };
 
-export default Seo;
+export default seo;
