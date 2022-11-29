@@ -1,3 +1,5 @@
+// TODO: Use CVA and tailwind to create a button component with different variants and sizes
+
 import PropTypes from 'prop-types';
 
 const Button = ({ onClick, type, children, className, disabled, ...props }) => {
@@ -6,8 +8,7 @@ const Button = ({ onClick, type, children, className, disabled, ...props }) => {
       disabled={disabled}
       onClick={onClick}
       type={type}
-      className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded disabled:cursor-not-allowed disabled:opacity-50`}
-      {...props}>
+      className='transition-color rounded bg-green-600 py-2 px-4 font-bold text-white duration-300 hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-50'>
       {children}
     </button>
   );

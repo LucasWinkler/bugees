@@ -1,12 +1,14 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { useSession, signOut } from 'next-auth/react';
-import { AvatarMenuLinks } from '../../../data/navLinks';
-import classNames from '../../../util/joinClassNames';
-import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
-import { PowerIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
-import titleCase from '../../../util/titleCase';
+import { ChevronDownIcon, PowerIcon } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
+import { signOut, useSession } from 'next-auth/react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Fragment } from 'react';
+
+import defaultProfileImage from '../../../public/images/default-profile-image.png';
+import avatarMenuLinks from '../../data/avatarMenuLinks';
+import titleCase from '../../util/titleCase';
 
 const AvatarMenu = () => {
   const { data: session, status } = useSession();
@@ -15,25 +17,25 @@ const AvatarMenu = () => {
     return null;
   }
 
-  const profileImage = session.user.image;
+  const userAvatar = session.user.image || defaultProfileImage;
 
   return (
     <Menu as='div' className='relative m-1 inline-block text-left'>
       <>
         <Menu.Button className='group flex items-center justify-center gap-1'>
           <span className='sr-only'>Open user menu</span>
-          <div className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 focus:ring-offset-gray-800 group-hover:outline-none group-hover:ring-2 group-hover:ring-green-300 group-hover:ring-offset-2 group-hover:ring-offset-gray-800 transition duration-200 overflow-hidden ease-in'>
+          <div className='flex overflow-hidden rounded-full bg-gray-800 text-sm transition duration-200 ease-in focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 focus:ring-offset-gray-800 group-hover:outline-none group-hover:ring-2 group-hover:ring-green-300 group-hover:ring-offset-2 group-hover:ring-offset-gray-800'>
             <Image
-              className='rounded-full h-8 w-8 xs:h-9 xs:w-9 group-hover:scale-[1.18] transition-transform duration-[400ms] delay-75'
+              className='h-8 w-8 rounded-full transition-transform delay-75 duration-[400ms] group-hover:scale-[1.18] xs:h-9 xs:w-9'
               referrerPolicy='no-referrer'
-              src={profileImage}
+              src={userAvatar}
               alt={`${session.user.name} profile image`}
               width={100}
               height={100}
               priority
             />
           </div>
-          <ChevronDownIcon className='text-neutral-300 group-hover:text-neutral-100 transition duration-200 ease-in h-6 w-6' />
+          <ChevronDownIcon className='h-6 w-6 text-neutral-300 transition duration-200 ease-in group-hover:text-neutral-100' />
         </Menu.Button>
       </>
       <Transition
@@ -44,25 +46,27 @@ const AvatarMenu = () => {
         leave='transition ease-in duration-75'
         leaveFrom='transform opacity-100 scale-100'
         leaveTo='transform opacity-0 scale-95'>
-        <Menu.Items className='absolute whitespace-nowrap right-0 z-10 mt-4 min-w-[12rem] origin-top-right rounded-md bg-neutral-900 p-2 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-neutral-700'>
-          <Menu.Item>
-            {({ active }) => (
+        <Menu.Items className='absolute right-0 z-10 mt-4 min-w-[12rem] origin-top-right whitespace-nowrap rounded-md border border-neutral-700 bg-neutral-900 p-2 focus:outline-none'>
+          <Menu.Item disabled>
+            {() => (
               <>
-                <div className='flex items-center mr-4 py-2'>
+                <div className='mr-4 flex items-center py-2'>
                   <div className='ml-4 mr-3'>
                     <Image
-                      className='rounded-full min-w-[2.5rem] min-h-[2.5rem] max-h-[2.5rem] max-w-[2.5rem]'
+                      className='max-h-[2.5rem] min-h-[2.5rem] min-w-[2.5rem] max-w-[2.5rem] rounded-full'
                       referrerPolicy='no-referrer'
-                      src={profileImage}
+                      src={userAvatar}
                       alt='profile'
                       width={100}
                       height={100}
                       priority
                     />
                   </div>
-                  <div className='text-sm text-neutral-300 font-semibold'>
-                    {session.user.name}
-                    <div className='text-neutral-400 font-normal'>
+                  <div className='text-sm'>
+                    <div className='font-semibold text-neutral-300'>
+                      {session.user.name}
+                    </div>
+                    <div className='text-neutral-400'>
                       {titleCase(session.user.role)}
                     </div>
                   </div>
@@ -71,13 +75,13 @@ const AvatarMenu = () => {
             )}
           </Menu.Item>
           <div className='separator'></div>
-          {AvatarMenuLinks.map(link => (
+          {avatarMenuLinks.map(link => (
             <Menu.Item key={link.name}>
               {({ active }) => (
                 <Link
-                  className={classNames(
+                  className={clsx(
                     active ? 'bg-neutral-800' : '',
-                    'block px-4 py-2 text-sm text-neutral-300 rounded'
+                    'block rounded px-4 py-2 text-sm text-neutral-300'
                   )}
                   href={link.href}>
                   <div className='flex items-center gap-2'>
@@ -92,9 +96,9 @@ const AvatarMenu = () => {
           <Menu.Item>
             {({ active }) => (
               <button
-                className={classNames(
+                className={clsx(
                   active ? 'bg-neutral-800' : '',
-                  'block px-4 py-2 text-sm text-red-500 opacity-95 rounded w-[100%]'
+                  'block w-[100%] rounded px-4 py-2 text-sm text-red-500 opacity-95'
                 )}
                 onClick={() => signOut()}>
                 <div className='flex items-center gap-2'>

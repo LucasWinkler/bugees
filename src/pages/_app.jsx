@@ -1,5 +1,8 @@
-import { SessionProvider } from 'next-auth/react';
 import { Inter } from '@next/font/google';
+import { SessionProvider } from 'next-auth/react';
+import Head from 'next/head';
+
+import seo from '../data/seo';
 import '../styles/globals.css';
 
 const inter = Inter({
@@ -7,18 +10,23 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   const getLayout = Component.getLayout || (page => page);
 
   return (
-    <div
-      className={`${inter.variable} font-sans antialiased bg-dark-blueish-gray text-gray-300 text-base overflow-x-hidden`}>
-      <SessionProvider session={session}>
-        {getLayout(<Component {...pageProps} />)}
-      </SessionProvider>
-    </div>
+    <>
+      <Head>
+        <title>{`${seo.title} | Bug Tracker`}</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+      </Head>
+      <div
+        className={`${inter.variable} min-h-screen overflow-x-hidden bg-dark-blueish-gray font-sans text-base text-gray-300 antialiased`}>
+        <SessionProvider session={session}>
+          {getLayout(<Component {...pageProps} />)}
+        </SessionProvider>
+      </div>
+    </>
   );
 }
+
+export default MyApp;
