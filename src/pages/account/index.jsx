@@ -6,8 +6,8 @@ import { useRouter } from 'next/router';
 import Layout from 'components/account/Layout';
 import { Container } from 'components/common/Container';
 import seo from 'data/seo';
-import ButtonOld from '../../components/common/ButtonOld';
 import { authOptions } from '../api/auth/[...nextauth]';
+import Button from 'components/common/Button';
 
 export default function Account() {
   const { data: session } = useSession();
@@ -21,12 +21,12 @@ export default function Account() {
 
       <Container>
         <h1>Account Settings</h1>
-        <ButtonOld
-          onClick={() => {
-            router.push('/');
-          }}>
+        <Button variant='primary' href='/'>
           Home
-        </ButtonOld>
+        </Button>
+        <Button variant='secondary' onClick={() => router.push('/dashboard')}>
+          Dashboard
+        </Button>
         <p>Welcome, {session?.user.name}</p>
       </Container>
     </>

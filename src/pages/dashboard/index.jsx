@@ -4,7 +4,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import Button from 'components/common/Button';
-import ButtonOld from 'components/common/ButtonOld';
 import { Container } from 'components/common/Container';
 import Layout from 'components/dashboard/Layout';
 import seo from 'data/seo';
@@ -22,31 +21,31 @@ export default function Dashboard() {
 
       <Container>
         <h1>Dashboard - Overview</h1>
-        <ButtonOld
-          onClick={() => {
-            router.push('/');
-          }}>
-          Home
-        </ButtonOld>
-        <ButtonOld
-          onClick={() => {
-            router.push('/dashboard/projects');
-          }}>
+        <Button variant='primary' href='/dashboard/projects'>
           Projects
-        </ButtonOld>
-        <ButtonOld
+        </Button>
+        <Button
+          variant='secondary'
           onClick={() => {
             router.push('/dashboard/bugs');
           }}>
           Bugs
-        </ButtonOld>
+        </Button>
         <p>Welcome, {session?.user.name}</p>
 
         <div className='separator' />
         <div className='h-full w-full py-12'>
           <div className='flex flex-wrap items-center justify-center gap-4 text-center'>
-            <Button variant='primary'>Primary</Button>
-            <Button variant='primary' modifier='outline'>
+            <Button
+              onClick={() => console.log('button element')}
+              variant='primary'>
+              Primary
+            </Button>
+            <Button
+              href='#'
+              onClick={() => console.log('Link/a element')}
+              variant='primary'
+              modifier='outline'>
               Primary Outline
             </Button>
             <Button variant='monochrome'>Monochrome</Button>

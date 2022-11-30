@@ -2,6 +2,7 @@ import { cva } from 'cva';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { ArrowPathIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 const button = cva(
   'rounded-md relative font-medium transition-color duration-150',
@@ -106,6 +107,13 @@ const button = cva(
   }
 );
 
+const ButtonElement = ({ children, ...props }) => {
+  if (typeof props.href === 'string') {
+    return <Link {...props}>{children}</Link>;
+  }
+  return <button {...props}>{children}</button>;
+};
+
 const Button = ({
   children,
   variant,
@@ -114,9 +122,10 @@ const Button = ({
   fullWidth,
   disabled,
   loading,
+  ...props
 }) => {
   return (
-    <button
+    <ButtonElement
       className={button({
         variant,
         modifier,
@@ -124,7 +133,8 @@ const Button = ({
         fullWidth,
         disabled,
       })}
-      disabled={disabled}>
+      disabled={disabled}
+      {...props}>
       <span className={clsx('', loading && 'text-transparent')}>
         {children}
       </span>
@@ -136,7 +146,7 @@ const Button = ({
           <span className='sr-only'>Loading</span>
         </>
       )}
-    </button>
+    </ButtonElement>
   );
 };
 
