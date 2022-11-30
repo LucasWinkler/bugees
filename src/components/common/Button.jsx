@@ -9,12 +9,10 @@ const button = cva(
   {
     variants: {
       variant: {
-        primary:
-          'bg-green-600 hover:bg-green-700 text-white border border-green-700',
+        primary: 'bg-green-600 hover:bg-green-700 text-white',
         secondary: 'bg-blue-600 hover:bg-blue-700 text-white',
         destructive: 'bg-red-600 hover:bg-red-700 text-white',
-        monochrome:
-          'bg-neutral-100 hover:bg-neutral-300 text-black border border-gray-400',
+        monochrome: 'bg-neutral-100 hover:bg-neutral-300 text-black',
       },
       modifier: {
         outline: '!bg-transparent border border-current',

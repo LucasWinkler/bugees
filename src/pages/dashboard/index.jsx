@@ -36,6 +36,7 @@ export default function Dashboard() {
         <div className='separator' />
         <div className='h-full w-full py-12'>
           <div className='flex flex-wrap items-center justify-center gap-4 text-center'>
+            <Button>Default</Button>
             <Button
               onClick={() => console.log('button element')}
               variant='primary'>
@@ -72,15 +73,6 @@ export default function Dashboard() {
             <Button variant='destructive' loading>
               Destructive Loading
             </Button>
-            <Button>Default</Button>
-            <Button modifier='plain'>Plain</Button>
-            <Button modifier='plain' loading>
-              Plain Loading
-            </Button>
-            <Button modifier='plain' disabled>
-              Plain Disabled
-            </Button>
-            <Button modifier='outline'>Outline Default</Button>
             <Button fullWidth>Full Width Default</Button>
             <Button variant='monochrome' fullWidth>
               Full Width Monochrome
