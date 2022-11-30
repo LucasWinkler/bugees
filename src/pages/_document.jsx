@@ -80,7 +80,7 @@ export default function Document() {
           content='-XwKpcZoOCHdpTSfmwxdZQ9DY60vqyJGTS7qE2iwJpY'
         />
       </Head>
-      <body>
+      <body className='overflow-y-scroll'>
         <Main />
         <NextScript />
       </body>

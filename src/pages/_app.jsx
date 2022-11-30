@@ -2,8 +2,8 @@ import { Inter } from '@next/font/google';
 import { SessionProvider } from 'next-auth/react';
 import Head from 'next/head';
 
-import seo from '../data/seo';
-import '../styles/globals.css';
+import seo from 'data/seo';
+import 'styles/globals.css';
 
 const inter = Inter({
   subsets: ['latin'],

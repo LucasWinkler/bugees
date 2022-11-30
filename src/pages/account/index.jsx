@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import Layout from 'components/account/Layout';
+import { Container } from 'components/common/Container';
 import seo from 'data/seo';
 import Button from '../../components/common/Button';
 import { authOptions } from '../api/auth/[...nextauth]';
@@ -18,14 +19,16 @@ export default function Account() {
         <title>{`Account Settings | ${seo.title}`}</title>
       </Head>
 
-      <h1>Account Settings</h1>
-      <Button
-        onClick={() => {
-          router.push('/');
-        }}>
-        Home
-      </Button>
-      <p>Welcome, {session?.user.name}</p>
+      <Container>
+        <h1>Account Settings</h1>
+        <Button
+          onClick={() => {
+            router.push('/');
+          }}>
+          Home
+        </Button>
+        <p>Welcome, {session?.user.name}</p>
+      </Container>
     </>
   );
 }

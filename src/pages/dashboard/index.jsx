@@ -3,10 +3,11 @@ import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+import Button from 'components/common/Button';
+import { Container } from 'components/common/Container';
+import Layout from 'components/dashboard/Layout';
 import seo from 'data/seo';
-import Button from '../../components/common/Button';
-import Layout from '../../components/dashboard/Layout';
-import { authOptions } from '../api/auth/[...nextauth]';
+import { authOptions } from 'pages/api/auth/[...nextauth]';
 
 export default function Dashboard() {
   const { data: session } = useSession();
@@ -18,14 +19,16 @@ export default function Dashboard() {
         <title>{`Overview | ${seo.title}`}</title>
       </Head>
 
-      <h1>Dashboard - Overview</h1>
-      <Button
-        onClick={() => {
-          router.push('/');
-        }}>
-        Home
-      </Button>
-      <p>Welcome, {session?.user.name}</p>
+      <Container>
+        <h1>Dashboard - Overview</h1>
+        <Button
+          onClick={() => {
+            router.push('/');
+          }}>
+          Home
+        </Button>
+        <p>Welcome, {session?.user.name}</p>
+      </Container>
     </>
   );
 }
