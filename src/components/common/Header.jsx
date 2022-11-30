@@ -1,6 +1,7 @@
 import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
 import { signIn, useSession } from 'next-auth/react';
 import Link from 'next/link';
+
 import AvatarMenu from './AvatarMenu';
 import { Container } from './Container';
 import Logo from './Logo';
@@ -12,7 +13,7 @@ const Header = () => {
     <>
       <header className='py-4 sm:py-5'>
         <Container>
-          <nav className='flex items-center justify-between  text-white'>
+          <nav className='flex items-center justify-between text-white'>
             <Link
               className='text-white transition-colors duration-300 hover:text-green-400'
               href='/'>

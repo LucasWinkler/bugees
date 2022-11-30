@@ -14,18 +14,16 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   const getLayout = Component.getLayout || (page => page);
 
   return (
-    <>
+    <div className={`${inter.variable} font-sans`}>
       <Head>
         <title>{`${seo.title} | Bug Tracker`}</title>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
-      <div
-        className={`${inter.variable} min-h-screen overflow-x-hidden bg-dark-blueish-gray font-sans text-base text-gray-300 antialiased`}>
-        <SessionProvider session={session}>
-          {getLayout(<Component {...pageProps} />)}
-        </SessionProvider>
-      </div>
-    </>
+
+      <SessionProvider session={session}>
+        {getLayout(<Component {...pageProps} />)}
+      </SessionProvider>
+    </div>
   );
 }
 

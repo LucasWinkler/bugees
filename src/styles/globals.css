@@ -6,6 +6,10 @@
   html {
     @apply scroll-smooth;
   }
+
+  body {
+    @apply min-h-screen overflow-y-scroll bg-dark-blueish-gray text-base leading-relaxed text-gray-300 antialiased;
+  }
 }
 
 @layer components {

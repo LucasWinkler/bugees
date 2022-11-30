@@ -8,7 +8,9 @@ import OutlineButton from '../OutlineButton';
 
 const Hero = () => {
   return (
-    <section id='hero' className='pb-24 pt-10 sm:pt-16 lg:pt-16 lg:pb-16'>
+    <section
+      id='hero'
+      className='overflow-x-hidden pb-24 pt-10 sm:pt-16 lg:pt-16 lg:pb-16'>
       <Container>
         <div className='relative text-center lg:flex lg:items-center lg:gap-12 lg:text-left'>
           <div className='lg:w-1/2'>
