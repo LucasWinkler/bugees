@@ -112,6 +112,10 @@ const ButtonElement = ({ children, ...props }) => {
   return <button {...props}>{children}</button>;
 };
 
+ButtonElement.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 const Button = ({
   children,
   variant,
