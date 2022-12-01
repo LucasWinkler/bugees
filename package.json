@@ -39,6 +39,8 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
+    "@types/node": "18.11.10",
+    "@types/react": "18.0.25",
     "autoprefixer": "^10.4.13",
     "dotenv-cli": "^6.0.0",
     "eslint-config-prettier": "^8.5.0",
