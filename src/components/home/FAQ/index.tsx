@@ -1,6 +1,7 @@
-import { Container } from 'components/common/Container';
 import Link from 'next/link';
-import FAQDisclosure from './FAQDisclosure';
+
+import { Container } from '@/components/common/Container';
+import FAQDisclosure from '@/components/home/FAQ/FAQDisclosure';
 
 const FAQ = () => {
   return (
@@ -47,4 +48,5 @@ const FAQ = () => {
     </section>
   );
 };
+
 export default FAQ;

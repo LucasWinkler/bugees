@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { Fragment } from 'react';
 
 import defaultProfileImage from '../../../public/images/default-profile-image.png';
-import avatarMenuLinks from '../../data/avatarMenuLinks';
-import titleCase from '../../util/titleCase';
+import avatarMenuLinks from '@/data/avatarMenuLinks';
+import titleCase from '@/util/titleCase';
 
 const AvatarMenu = () => {
   const { data: session, status } = useSession();

@@ -3,13 +3,15 @@ import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import Layout from 'components/account/Layout';
-import { Container } from 'components/common/Container';
-import seo from 'data/seo';
-import { authOptions } from '../api/auth/[...nextauth]';
-import Button from 'components/common/Button';
+import Layout from '@/components/account/Layout';
+import { Container } from '@/components/common/Container';
+import seo from '@/data/seo';
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import Button from '@/components/common/Button';
+import { NextPageWithLayout } from '@/types/page';
+import { GetServerSideProps } from 'next';
 
-export default function Account() {
+export const Account: NextPageWithLayout = () => {
   const { data: session } = useSession();
   const router = useRouter();
 
@@ -31,13 +33,13 @@ export default function Account() {
       </Container>
     </>
   );
-}
+};
 
 Account.getLayout = function (page) {
   return <Layout>{page}</Layout>;
 };
 
-export async function getServerSideProps(context) {
+export const getServerSideProps: GetServerSideProps = async context => {
   const session = await unstable_getServerSession(
     context.req,
     context.res,
@@ -58,4 +60,6 @@ export async function getServerSideProps(context) {
       session,
     },
   };
-}
+};
+
+export default Account;

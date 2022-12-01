@@ -1,6 +1,10 @@
-import PropTypes from 'prop-types';
+interface FeaturesCardProps {
+  title: string;
+  children: React.ReactNode;
+  icon: JSX.Element;
+}
 
-const FeaturesCard = ({ title, icon, children }) => {
+const FeaturesCard = ({ title, icon, children }: FeaturesCardProps) => {
   return (
     <div className='flex flex-col items-center justify-center rounded border-b-4 border-green-300 bg-neutral-800 px-6 py-12 xs:max-w-[20rem] md:max-w-[18rem] md:px-8 md:py-12 lg:max-w-[20rem] xl:max-w-[22rem] xl:py-20'>
       {icon && (
@@ -16,12 +20,6 @@ const FeaturesCard = ({ title, icon, children }) => {
       {children && <p className='my-2 max-w-[40ch] text-center'>{children}</p>}
     </div>
   );
-};
-
-FeaturesCard.propTypes = {
-  title: PropTypes.string,
-  icon: PropTypes.element,
-  children: PropTypes.node,
 };
 
 export default FeaturesCard;

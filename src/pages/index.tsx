@@ -1,17 +1,19 @@
 import { unstable_getServerSession } from 'next-auth';
 import Head from 'next/head';
-
+import { GetServerSideProps } from 'next';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import CallToAction from 'components/home/CallToAction';
-import FAQ from 'components/home/FAQ';
-import Features from 'components/home/Features';
-import Hero from 'components/home/Hero';
-import Layout from 'components/home/Layout';
-import OutlineButton from 'components/home/OutlineButton';
-import seo from 'data/seo';
-import { authOptions } from './api/auth/[...nextauth]';
 
-export default function Home() {
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import CallToAction from '@/components/home/CallToAction';
+import FAQ from '@/components/home/FAQ';
+import Features from '@/components/home/Features';
+import Hero from '@/components/home/Hero';
+import Layout from '@/components/home/Layout';
+import OutlineButton from '@/components/home/OutlineButton';
+import seo from '@/data/seo';
+import { NextPageWithLayout } from '@/types/page';
+
+export const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -36,13 +38,13 @@ export default function Home() {
       </CallToAction>
     </>
   );
-}
+};
 
 Home.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
 
-export async function getServerSideProps(context) {
+export const getServerSideProps: GetServerSideProps = async context => {
   const session = await unstable_getServerSession(
     context.req,
     context.res,
@@ -54,4 +56,6 @@ export async function getServerSideProps(context) {
       session,
     },
   };
-}
+};
+
+export default Home;

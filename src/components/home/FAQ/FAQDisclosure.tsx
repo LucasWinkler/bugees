@@ -1,8 +1,12 @@
 import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
-import PropTypes from 'prop-types';
 
-const FAQDisclosure = ({ question, children }) => {
+interface FAQDisclosureProps {
+  question: string;
+  children: React.ReactNode;
+}
+
+const FAQDisclosure = ({ question, children }: FAQDisclosureProps) => {
   return (
     <Disclosure>
       {({ open }) => (
@@ -30,11 +34,6 @@ const FAQDisclosure = ({ question, children }) => {
       )}
     </Disclosure>
   );
-};
-
-FAQDisclosure.propTypes = {
-  children: PropTypes.node.isRequired,
-  question: PropTypes.string.isRequired,
 };
 
 export default FAQDisclosure;

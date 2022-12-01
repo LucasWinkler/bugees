@@ -1,8 +1,12 @@
-import PropTypes from 'prop-types';
+import { Container } from '@/components/common/Container';
 
-import { Container } from 'components/common/Container';
+interface CallToActionProps {
+  id: string;
+  title: string;
+  children?: React.ReactNode;
+}
 
-const CallToAction = ({ id, title, children }) => {
+const CallToAction = ({ id, title, children }: CallToActionProps) => {
   return (
     <section id={id} className='bg-green-700 py-14'>
       <Container>
@@ -15,12 +19,6 @@ const CallToAction = ({ id, title, children }) => {
       </Container>
     </section>
   );
-};
-
-CallToAction.propTypes = {
-  children: PropTypes.node,
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default CallToAction;

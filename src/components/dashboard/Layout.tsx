@@ -1,6 +1,6 @@
-import Header from 'components/common/Header';
-import SkipNavigation from '../common/SkipNavigation';
-import NavigationDrawer from './NavigationDrawer';
+import Header from '@/components/common/Header';
+import SkipNavigation from '@/components/common/SkipNavigation';
+import NavigationDrawer from '@/components/dashboard/NavigationDrawer';
 
 const Layout = ({ children }) => {
   return (

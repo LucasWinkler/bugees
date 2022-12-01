@@ -4,11 +4,11 @@ export const config = {
   runtime: 'experimental-edge',
 };
 
-export default function handler(req) {
+export default function handler() {
   return new ImageResponse(
     (
       <div
-        tw='bg-neutral-900'
+        tw='bg-dark-blueish-gray'
         style={{
           fontSize: 68,
           width: '100%',

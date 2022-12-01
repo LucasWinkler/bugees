@@ -1,8 +1,10 @@
-import { cva } from 'cva';
+// TODO: Use proper types instead of randomly trying things until it works... lol
+
+import { cva, VariantProps } from 'cva';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import { ArrowPathIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { ButtonHTMLAttributes } from 'react';
 
 const button = cva(
   'rounded-md relative font-medium transition-color duration-150',
@@ -99,21 +101,36 @@ const button = cva(
       },
     ],
     defaultVariants: {
-      variant: 'default',
+      variant: 'primary',
       size: 'medium',
     },
   }
 );
 
-const ButtonElement = ({ children, ...props }) => {
+interface ButtonAsButtonProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'> {
+  // This prevents you from adding an href prop on a real button, and also tells typescript that by knowing
+  // an href is NOT allowed here, that as soon as an href is passed, its type will be ButtonAsAnchorProps
+  // and not ButtonAsButtonProps anymore.
+  href?: never;
+}
+
+interface ButtonAsAnchorProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string;
+}
+
+type ButtonProps = VariantProps<typeof button> &
+  (ButtonAsButtonProps | ButtonAsAnchorProps) & {
+    children: React.ReactNode;
+    loading?: boolean;
+  };
+
+const ButtonElement = ({ children, ...props }: any) => {
   if (typeof props.href === 'string') {
     return <Link {...props}>{children}</Link>;
   }
   return <button {...props}>{children}</button>;
-};
-
-ButtonElement.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 const Button = ({
@@ -124,19 +141,20 @@ const Button = ({
   fullWidth,
   disabled,
   loading,
-  ...props
-}) => {
+  href,
+  onClick,
+}: ButtonProps) => {
   return (
     <ButtonElement
+      href={href}
+      onClick={onClick}
       className={button({
         variant,
         modifier,
         size,
         fullWidth,
         disabled,
-      })}
-      disabled={disabled}
-      {...props}>
+      })}>
       <span className={clsx('', loading && 'text-transparent')}>
         {children}
       </span>
@@ -150,21 +168,6 @@ const Button = ({
       )}
     </ButtonElement>
   );
-};
-
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'destructive',
-    'monochrome',
-  ]),
-  modifier: PropTypes.oneOf(['outline', 'plain']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  fullWidth: PropTypes.bool,
-  disabled: PropTypes.bool,
-  loading: PropTypes.bool,
 };
 
 export default Button;

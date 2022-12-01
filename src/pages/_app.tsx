@@ -2,15 +2,19 @@ import { Inter } from '@next/font/google';
 import { SessionProvider } from 'next-auth/react';
 import Head from 'next/head';
 
-import seo from 'data/seo';
-import 'styles/globals.css';
+import { AppPropsWithLayout } from '@/types/page';
+import seo from '@/data/seo';
+import '@/styles/globals.css';
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+function MyApp({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppPropsWithLayout) {
   const getLayout = Component.getLayout || (page => page);
 
   return (

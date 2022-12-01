@@ -1,6 +1,5 @@
-import Header from 'components/common/Header';
-import SkipNavigation from '../common/SkipNavigation';
-import Footer from './Footer';
+import Header from '@/components/common/Header';
+import SkipNavigation from '@/components/common/SkipNavigation';
 
 const Layout = ({ children }) => {
   return (
@@ -8,7 +7,6 @@ const Layout = ({ children }) => {
       <SkipNavigation />
       <Header />
       <main id='main-content'>{children}</main>
-      <Footer />
     </>
   );
 };

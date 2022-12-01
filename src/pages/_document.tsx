@@ -1,8 +1,8 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 
-import seo from '../data/seo';
+import seo from '@/data/seo';
 
-export default function Document() {
+export const Document = () => {
   return (
     <Html prefix='og: https://ogp.me/ns#'>
       <Head>
@@ -86,4 +86,6 @@ export default function Document() {
       </body>
     </Html>
   );
-}
+};
+
+export default Document;

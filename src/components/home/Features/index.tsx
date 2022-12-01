@@ -1,7 +1,7 @@
 import { UserGroupIcon } from '@heroicons/react/24/outline';
 
-import { Container } from 'components/common/Container';
-import FeaturesCard from './FeaturesCard';
+import { Container } from '@/components/common/Container';
+import FeaturesCard from '@/components/home/Features/FeaturesCard';
 
 const Features = () => {
   return (

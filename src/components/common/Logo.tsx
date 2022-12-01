@@ -1,7 +1,11 @@
-const Logo = props => {
+interface LogoProps {
+  className?: string;
+}
+
+const Logo = ({ className }: LogoProps) => {
   return (
     <svg
-      className={props.className}
+      className={className}
       fill='currentColor'
       width='119'
       height='38'
