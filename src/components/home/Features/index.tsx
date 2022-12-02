@@ -22,7 +22,7 @@ const Features = () => {
           <FeaturesCard icon={<UserGroupIcon />} title='Collaboration'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
             tenetur debitis ipsam numquam aliquam?
-          </FeaturesCard>
+          </FeaturesCard>        
         </div>
       </Container>
     </section>

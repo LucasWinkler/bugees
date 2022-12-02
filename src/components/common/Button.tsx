@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { ButtonHTMLAttributes } from 'react';
 
 const button = cva(
-  'rounded-md relative font-medium transition-color duration-150',
+  'rounded-md relative font-medium transition-color duration-150 inline-block leading-[inherit]',
   {
     variants: {
       variant: {

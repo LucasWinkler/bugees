@@ -21,7 +21,7 @@ npm install
 
 - I use a local PostgreSQL database for development.
 
-### 4. Setup your environment variables. An example file is provided.
+### 4. Setup your environment variables. An example file is provided
 
 - File must be named `.env.local` for development.
 - Ensure you use the custom scripts that use this file.
@@ -29,7 +29,7 @@ npm install
 ### 5. Create/sync the database
 
 ```sh
-npm run migrate:dev
+npm run db:push
 ```
 
 ### 6. Host a local development server
