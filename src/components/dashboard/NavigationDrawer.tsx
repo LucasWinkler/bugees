@@ -1,7 +1,13 @@
-const NavigationDrawer = () => {
+import clsx from 'clsx';
+
+interface NavigationDrawerProps {
+  className?: string;
+}
+
+const NavigationDrawer = ({ className }: NavigationDrawerProps) => {
   return (
-    <aside>
-      <nav>Sidebar Navigation Drawer</nav>
+    <aside className={clsx('', className)}>
+      <nav className=''>Sidebar Navigation Drawer</nav>
     </aside>
   );
 };

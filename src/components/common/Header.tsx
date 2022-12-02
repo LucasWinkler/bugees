@@ -5,13 +5,18 @@ import Link from 'next/link';
 import AvatarMenu from '@/components/common/AvatarMenu';
 import { Container } from '@/components/common/Container';
 import Logo from '@/components/common/Logo';
+import clsx from 'clsx';
 
-const Header = () => {
+interface HeaderProps {
+  className?: string;
+}
+
+const Header = ({ className }: HeaderProps) => {
   const { data: session, status } = useSession();
 
   return (
     <>
-      <header className='py-4 sm:py-5'>
+      <header className={clsx('py-4 sm:py-5', className)}>
         <Container>
           <nav className='flex items-center justify-between text-white'>
             <Link
