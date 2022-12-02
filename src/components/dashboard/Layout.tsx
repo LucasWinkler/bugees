@@ -2,7 +2,11 @@ import Header from '@/components/common/Header';
 import SkipNavigation from '@/components/common/SkipNavigation';
 import NavigationDrawer from '@/components/dashboard/NavigationDrawer';
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <SkipNavigation />
