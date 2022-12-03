@@ -5,6 +5,14 @@
   A bug tracker built Next.js, Tailwind CSS, Prisma and more.
 </p>
 
+## Huge thanks to
+
+- Jeroen Reumkens
+  - Helped me out with the implementation my Button component especially the TypeScript part.
+  - Links:
+    - [GitHub: JeroenReumkens](https://github.com/JeroenReumkens)
+    - [YouTube: frontendfyi](https://www.youtube.com/@frontendfyi)
+
 ## Getting Started
 
 Follow these steps in order to get the website up and running locally on your machine.
@@ -21,7 +29,7 @@ npm install
 
 - I use a local PostgreSQL database for development.
 
-### 4. Setup your environment variables. An example file is provided.
+### 4. Setup your environment variables. An example file is provided
 
 - File must be named `.env.local` for development.
 - Ensure you use the custom scripts that use this file.
@@ -29,7 +37,7 @@ npm install
 ### 5. Create/sync the database
 
 ```sh
-npm run migrate:dev
+npm run db:push
 ```
 
 ### 6. Host a local development server
