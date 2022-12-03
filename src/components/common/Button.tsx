@@ -1,4 +1,12 @@
-// TODO: Use proper types instead of randomly trying things until it works... lol
+/**
+ * Huge thanks to Jeroen Reumkens for helping me out with
+ * the implementation of this component especially the
+ * TypeScript part.
+ *
+ * Links:
+ * https://github.com/JeroenReumkens
+ * https://www.youtube.com/@frontendfyi
+ */
 
 import { cva, VariantProps } from 'cva';
 import clsx from 'clsx';
@@ -161,9 +169,11 @@ const Button = ({
   );
 
   if (typeof buttonAttributes.href === 'string') {
-    return <Link {...buttonAttributes} className={classes}>
-      <ButtonChildren />
-    </Link>;
+    return (
+      <Link {...buttonAttributes} className={classes}>
+        <ButtonChildren />
+      </Link>
+    );
   }
 
   return (

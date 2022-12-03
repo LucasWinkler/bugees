@@ -5,6 +5,14 @@
   A bug tracker built Next.js, Tailwind CSS, Prisma and more.
 </p>
 
+## Huge thanks to
+
+- Jeroen Reumkens
+  - Helped me out with the implementation my Button component especially the TypeScript part.
+  - Links:
+    - [GitHub: JeroenReumkens](https://github.com/JeroenReumkens)
+    - [YouTube: frontendfyi](https://www.youtube.com/@frontendfyi)
+
 ## Getting Started
 
 Follow these steps in order to get the website up and running locally on your machine.
