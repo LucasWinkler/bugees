@@ -126,13 +126,6 @@ type ButtonProps = VariantProps<typeof button> &
     loading?: boolean;
   };
 
-const ButtonElement = ({ children, ...props }: any) => {
-  if (typeof props.href === 'string') {
-    return <Link {...props}>{children}</Link>;
-  }
-  return <button {...props}>{children}</button>;
-};
-
 const Button = ({
   children,
   variant,
@@ -141,20 +134,18 @@ const Button = ({
   fullWidth,
   disabled,
   loading,
-  href,
-  onClick,
+  ...buttonAttributes
 }: ButtonProps) => {
-  return (
-    <ButtonElement
-      href={href}
-      onClick={onClick}
-      className={button({
-        variant,
-        modifier,
-        size,
-        fullWidth,
-        disabled,
-      })}>
+  const classes = button({
+    variant,
+    modifier,
+    size,
+    fullWidth,
+    disabled,
+  });
+
+  const ButtonChildren = () => (
+    <>
       <span className={clsx('', loading && 'text-transparent')}>
         {children}
       </span>
@@ -166,7 +157,19 @@ const Button = ({
           <span className='sr-only'>Loading</span>
         </>
       )}
-    </ButtonElement>
+    </>
+  );
+
+  if (typeof buttonAttributes.href === 'string') {
+    return <Link {...buttonAttributes} className={classes}>
+      <ButtonChildren />
+    </Link>;
+  }
+
+  return (
+    <button {...buttonAttributes} className={classes}>
+      <ButtonChildren />
+    </button>
   );
 };
 
