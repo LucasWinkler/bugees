@@ -1,6 +1,6 @@
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
-import { Container } from '@/components/common/Container';
+import Container from '@/components/common/Container';
 import HeroImage from '@/components/home/Hero/HeroImage';
 import HeroTitle from '@/components/home/Hero/HeroTitle';
 import OutlineButton from '@/components/home/OutlineButton';

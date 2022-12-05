@@ -8,10 +8,10 @@
  * https://www.youtube.com/@frontendfyi
  */
 
-import { cva, VariantProps } from 'cva';
 import clsx from 'clsx';
-import { ArrowPathIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { ArrowPathIcon } from '@heroicons/react/24/outline';
+import { cva, VariantProps } from 'cva';
 import { ButtonHTMLAttributes } from 'react';
 
 const button = cva(
@@ -25,7 +25,7 @@ const button = cva(
         monochrome: 'bg-neutral-100 hover:bg-neutral-300 text-black',
       },
       modifier: {
-        outline: '!bg-transparent border border-current',
+        outline: 'bg-transparent border border-current',
         plain:
           'shadow-none bg-transparent border-none px-2 py-1 text-sm text-white',
       },
@@ -61,6 +61,12 @@ const button = cva(
         modifier: 'outline',
         variant: 'secondary',
         className: 'text-blue-500 hover:bg-transparent hover:text-blue-600',
+      },
+      {
+        modifier: 'plain',
+        variant: 'monochrome',
+        className:
+          'text-neutral-100 hover:text-neutral-300 hover:bg-transparent',
       },
       {
         modifier: 'plain',

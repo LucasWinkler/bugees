@@ -13,7 +13,7 @@ import OutlineButton from '@/components/home/OutlineButton';
 import seo from '@/data/seo';
 import { NextPageWithLayout } from '@/types/page';
 
-export const Home: NextPageWithLayout = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>

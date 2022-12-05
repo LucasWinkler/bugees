@@ -3,7 +3,7 @@ import { signIn, useSession } from 'next-auth/react';
 import Link from 'next/link';
 
 import AvatarMenu from '@/components/common/AvatarMenu';
-import { Container } from '@/components/common/Container';
+import Container from '@/components/common/Container';
 import Logo from '@/components/common/Logo';
 import clsx from 'clsx';
 

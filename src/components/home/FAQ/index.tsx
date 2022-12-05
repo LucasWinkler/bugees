@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Container } from '@/components/common/Container';
+import Container from '@/components/common/Container';
 import FAQDisclosure from '@/components/home/FAQ/FAQDisclosure';
 
 const FAQ = () => {

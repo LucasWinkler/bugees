@@ -4,14 +4,14 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import Layout from '@/components/account/Layout';
-import { Container } from '@/components/common/Container';
+import Container from '@/components/common/Container';
 import seo from '@/data/seo';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import Button from '@/components/common/Button';
 import { NextPageWithLayout } from '@/types/page';
 import { GetServerSideProps } from 'next';
 
-export const Account: NextPageWithLayout = () => {
+const Account: NextPageWithLayout = () => {
   const { data: session } = useSession();
   const router = useRouter();
 

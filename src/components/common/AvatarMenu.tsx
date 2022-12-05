@@ -20,7 +20,7 @@ const AvatarMenu = () => {
   const userAvatar = session.user.image || defaultProfileImage;
 
   return (
-    <Menu as='div' className='relative m-1 inline-block text-left'>
+    <Menu as='div' className='relative inline-block text-left'>
       <>
         <Menu.Button className='group flex items-center justify-center gap-1'>
           <span className='sr-only'>Open user menu</span>

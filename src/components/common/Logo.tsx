@@ -1,3 +1,5 @@
+import { PropsWithChildren } from 'react';
+
 interface LogoProps {
   className?: string;
 }

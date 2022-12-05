@@ -17,3 +17,25 @@
     @apply my-2 h-[1px] w-full bg-neutral-800;
   }
 }
+
+@layer utilities {
+  .dashboard-layout {
+    @apply grid h-screen [grid-template-rows:0.2fr_3fr] [grid-template-columns:clamp(12rem,30vw,20rem)_1fr_1fr_1fr];
+
+    grid-template-areas:
+      'sidebar header header header'
+      'sidebar main main main';
+  }
+
+  .dashboard-sidebar {
+    grid-area: sidebar;
+  }
+
+  .dashboard-header {
+    grid-area: header;
+  }
+
+  .dashboard-main {
+    grid-area: main;
+  }
+}
