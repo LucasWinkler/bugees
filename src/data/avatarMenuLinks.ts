@@ -4,7 +4,7 @@ import {
   Squares2X2Icon,
 } from '@heroicons/react/24/outline';
 
-export const avatarMenuLinks = [
+const avatarMenuLinks = [
   {
     name: 'Home',
     href: '/',

@@ -15,15 +15,15 @@ const NavigationDrawer = ({ className }: NavigationDrawerProps) => {
           className='py-6 text-white transition-colors duration-300 hover:text-green-400'
           href='/dashboard'>
           <span className='sr-only'>Bugees</span>
-          <Logo className='mx-auto h-6 w-auto sm:h-7' />
+          <Logo className='h-6 w-auto px-4 sm:h-7' />
         </Link>
-        <ul className='mt-6 flex flex-col gap-4'>
-          {navigationDrawerLinks.map(link => (
+        <ul className='mt-3 flex flex-col gap-2'>
+          {navigationDrawerLinks.primary.map(link => (
             <li
-              className='block rounded px-4 py-4 text-sm font-medium text-neutral-300 hover:bg-neutral-900 hover:text-white'
+              className='block rounded text-sm font-medium text-neutral-300 hover:bg-neutral-800 hover:text-white'
               key={link.href}>
               <Link
-                className='flex items-center gap-3 text-left'
+                className='flex items-center gap-3 px-4 py-4 text-left'
                 href={link.href}>
                 <>
                   {<link.icon className='h-5 w-auto' />}
@@ -33,6 +33,26 @@ const NavigationDrawer = ({ className }: NavigationDrawerProps) => {
             </li>
           ))}
         </ul>
+        <div className='separator'></div>
+        {navigationDrawerLinks.secondary.map(link => (
+          <li
+            className={clsx(
+              'block rounded text-sm font-medium hover:bg-neutral-800',
+              link.name === 'Sign out'
+                ? 'text-red-500 opacity-95'
+                : 'text-neutral-300 hover:text-white'
+            )}
+            key={link.href}>
+            <Link
+              className='flex items-center gap-3 px-4 py-4 text-left'
+              href={link.href}>
+              <>
+                {<link.icon className='h-5 w-auto' />}
+                {link.name}
+              </>
+            </Link>
+          </li>
+        ))}
       </nav>
     </aside>
   );

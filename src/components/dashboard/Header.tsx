@@ -12,7 +12,7 @@ const Header: FC<HeaderProps> = ({ className }) => {
   return (
     <header
       className={clsx(
-        'flex items-center justify-end px-4 py-2 md:px-8',
+        'flex items-center justify-end px-4 py-6 md:px-8',
         className
       )}>
       <ul className='flex items-center justify-end gap-1'>

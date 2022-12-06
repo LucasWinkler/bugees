@@ -1,4 +1,4 @@
-export const seo = {
+const seo = {
   title: 'Bugees',
   description:
     'Your new best friend that will help you track down those pesky bugs.',
