@@ -1,5 +1,5 @@
 import { Menu } from '@headlessui/react';
-import { BellIcon } from '@heroicons/react/24/outline';
+import { BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { FC } from 'react';
 import AvatarMenu from '../common/AvatarMenu';
@@ -12,11 +12,22 @@ const Header: FC<HeaderProps> = ({ className }) => {
   return (
     <header
       className={clsx(
-        'flex items-center justify-end px-4 py-6 md:px-8',
+        'flex items-center justify-between gap-2 px-4 py-6 md:px-8',
         className
       )}>
+      <div className='flex items-center rounded bg-neutral-800'>
+        <label htmlFor='search'>
+          <MagnifyingGlassIcon className='h-5 w-auto px-3 text-neutral-300' />
+        </label>
+        <input
+          id='search'
+          type='text'
+          className='w-full rounded-md bg-neutral-800 py-2 text-sm placeholder-neutral-400 focus:outline-none'
+          placeholder='Search'
+        />
+      </div>
       <ul className='flex items-center justify-end gap-1'>
-        <li className='text-white'>
+        {/* <li className='text-white'>
           <Menu as='div' className='relative m-1 inline-block text-left'>
             <div>
               <Menu.Button
@@ -27,8 +38,10 @@ const Header: FC<HeaderProps> = ({ className }) => {
               </Menu.Button>
             </div>
           </Menu>
+        </li> */}
+        <li>
+          <AvatarMenu />
         </li>
-        <AvatarMenu />
       </ul>
     </header>
   );
