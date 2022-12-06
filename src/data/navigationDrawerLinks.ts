@@ -2,8 +2,8 @@ import {
   BugAntIcon,
   Cog6ToothIcon,
   DocumentDuplicateIcon,
-  HomeIcon,
   PowerIcon,
+  Squares2X2Icon,
 } from '@heroicons/react/24/outline';
 
 const navigationDrawerLinks = {
@@ -11,7 +11,7 @@ const navigationDrawerLinks = {
     {
       name: 'Overview',
       href: '/dashboard',
-      icon: HomeIcon,
+      icon: Squares2X2Icon,
     },
     {
       name: 'Projects',
