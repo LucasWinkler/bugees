@@ -1,9 +1,5 @@
+import { Role } from '@prisma/client';
 import NextAuth, { DefaultSession, DefaultUser } from 'next-auth';
-
-enum Role {
-  ADMIN = 'Admin',
-  USER = 'User',
-}
 
 declare module 'next-auth' {
   /**

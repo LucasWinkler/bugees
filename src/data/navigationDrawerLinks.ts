@@ -4,6 +4,7 @@ import {
   DocumentDuplicateIcon,
   PowerIcon,
   Squares2X2Icon,
+  UsersIcon,
 } from '@heroicons/react/24/outline';
 
 const navigationDrawerLinks = {
@@ -34,6 +35,13 @@ const navigationDrawerLinks = {
       name: 'Sign out',
       href: '/api/auth/signout',
       icon: PowerIcon,
+    },
+  ],
+  admin: [
+    {
+      name: 'Manage Users',
+      href: '/dashboard/admin/users',
+      icon: UsersIcon,
     },
   ],
 };

@@ -1,25 +1,19 @@
-import { unstable_getServerSession } from 'next-auth/next';
-import Head from 'next/head';
-
 import Layout from '@/components/dashboard/Layout';
-import seo from '@/data/seo';
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { NextPageWithLayout } from '@/types/page';
 import { GetServerSideProps } from 'next';
+import { unstable_getServerSession } from 'next-auth';
+import { authOptions } from './api/auth/[...nextauth]';
 
-const Dashboard: NextPageWithLayout = () => {
+const Forbidden: NextPageWithLayout = () => {
   return (
-    <>
-      <Head>
-        <title>{`Overview | ${seo.title}`}</title>
-      </Head>
-
-      <div>Charts etc...</div>
-    </>
+    <div>
+      <h1>Forbidden</h1>
+      <p>You do not have permission to access this.</p>
+    </div>
   );
 };
 
-Dashboard.getLayout = function (page) {
+Forbidden.getLayout = function (page) {
   return <Layout>{page}</Layout>;
 };
 
@@ -46,4 +40,4 @@ export const getServerSideProps: GetServerSideProps = async context => {
   };
 };
 
-export default Dashboard;
+export default Forbidden;
