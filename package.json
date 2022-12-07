@@ -11,7 +11,6 @@
     "start": "next start",
     "lint": "next lint",
     "seed": "npx dotenv -e .env.local -- prisma db seed",
-    "postinstall": "prisma generate",
     "migrate:dev": "npx dotenv -e .env.local -- prisma migrate dev",
     "db:push": "npx dotenv -e .env.local -- prisma db push",
     "migrate:reset": "npx dotenv -e .env.local -- prisma migrate reset",
