@@ -7,6 +7,7 @@ import { NextPageWithLayout } from '@/types/page';
 import { GetServerSideProps } from 'next';
 import { Role, User } from '@prisma/client';
 import Layout from '@/components/dashboard/Layout';
+import prisma from '@/lib/prismadb';
 
 interface UsersProps {
   users: User[];
@@ -59,7 +60,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     };
   }
 
-  const data = await prisma?.user.findMany();
+  const data = await prisma.user.findMany();
   const users = JSON.parse(JSON.stringify(data));
 
   return {

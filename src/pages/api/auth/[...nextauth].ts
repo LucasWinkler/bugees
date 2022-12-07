@@ -3,10 +3,10 @@ import NextAuth, { Session, User } from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 
-import client from '../../../lib/prismadb';
+import prisma from '../../../lib/prismadb';
 
 export const authOptions = {
-  adapter: PrismaAdapter(client),
+  adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
