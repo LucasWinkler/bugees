@@ -5,20 +5,27 @@ import seo from '@/data/seo';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { NextPageWithLayout } from '@/types/page';
 import { GetServerSideProps } from 'next';
-import { Role } from '@prisma/client';
+import { Role, User } from '@prisma/client';
 import Layout from '@/components/dashboard/Layout';
 
-const Users: NextPageWithLayout = () => {
+interface UsersProps {
+  users: User[];
+}
+
+const Users: NextPageWithLayout<UsersProps> = ({ users }) => {
   return (
     <>
       <Head>
         <title>{`Manage Users | ${seo.title}`}</title>
       </Head>
 
-      <div>
-        List of users with ability to change their account details but more
-        specifically their roles.
-      </div>
+      <ul>
+        {users.map((user: User) => (
+          <li key={user.id}>
+            {user.name} - {user.email} - {user.role}
+          </li>
+        ))}
+      </ul>
     </>
   );
 };
@@ -52,9 +59,13 @@ export const getServerSideProps: GetServerSideProps = async context => {
     };
   }
 
+  const data = await prisma?.user.findMany();
+  const users = JSON.parse(JSON.stringify(data));
+
   return {
     props: {
       session,
+      users,
     },
   };
 };
