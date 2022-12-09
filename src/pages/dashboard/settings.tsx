@@ -7,21 +7,42 @@ import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { NextPageWithLayout } from '@/types/page';
 import { GetServerSideProps } from 'next';
 import Title from '@/components/dashboard/Title';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 
-const Dashboard: NextPageWithLayout = () => {
+const defaultProfileImage = '/images/default-profile-image.png';
+
+const Settings: NextPageWithLayout = () => {
+  const { data: session } = useSession();
+  const user = session?.user;
+
+  const userAvatar = session?.user.image || defaultProfileImage;
+
   return (
     <>
       <Head>
-        <title>{`Overview | ${seo.title}`}</title>
+        <title>{`Account Settings | ${seo.title}`}</title>
       </Head>
 
-      <Title>Overview</Title>
-      <p>Charts and stuff eventually...</p>
+      <Title>Account Settings</Title>
+      <div>
+        <Image
+          className='h-[4rem] w-auto rounded-full'
+          referrerPolicy='no-referrer'
+          src={userAvatar}
+          alt='profile'
+          width={100}
+          height={100}
+          priority
+        />
+      </div>
+      <p>{user?.name}</p>
+      <p>{user?.email}</p>
     </>
   );
 };
 
-Dashboard.getLayout = function (page) {
+Settings.getLayout = function (page) {
   return <Layout>{page}</Layout>;
 };
 
@@ -48,4 +69,4 @@ export const getServerSideProps: GetServerSideProps = async context => {
   };
 };
 
-export default Dashboard;
+export default Settings;

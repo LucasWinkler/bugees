@@ -8,31 +8,27 @@ import { GetServerSideProps } from 'next';
 import { Role } from '@prisma/client';
 import Layout from '@/components/dashboard/Layout';
 import prisma from '@/lib/prismadb';
-import UsersTable from '@/components/dashboard/UsersTable';
 import Title from '@/components/dashboard/Title';
 
-type UserProps = {
-  id: string;
-  name: string;
-  email: string;
-  role: Role;
-  createdAt: Date;
-};
-
-const Users: NextPageWithLayout<{ users: UserProps[] }> = ({ users }) => {
+const Bugs: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>{`Manage Users | ${seo.title}`}</title>
+        <title>{`Bugs | ${seo.title}`}</title>
       </Head>
 
-      <Title>Manage Users</Title>
-      <UsersTable users={users} />
+      <Title>Bugs</Title>
+      <p>Show table with bugs</p>
+      <p>
+        Bugs will be from all projects that the user is in. Can be filtered by
+        bugs the user has created, is assinged to, or some other options. Could
+        get complex going to keep it simple to start.
+      </p>
     </>
   );
 };
 
-Users.getLayout = function (page) {
+Bugs.getLayout = function (page) {
   return <Layout>{page}</Layout>;
 };
 
@@ -61,24 +57,16 @@ export const getServerSideProps: GetServerSideProps = async context => {
     };
   }
 
-  const data = await prisma.user.findMany({
-    select: {
-      id: true,
-      name: true,
-      email: true,
-      role: true,
-      createdAt: true,
-    },
-  });
+  const data = await prisma.bug.findMany();
 
-  const users = JSON.parse(JSON.stringify(data));
+  const bugs = JSON.parse(JSON.stringify(data));
 
   return {
     props: {
       session,
-      users,
+      bugs,
     },
   };
 };
 
-export default Users;
+export default Bugs;

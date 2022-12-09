@@ -37,6 +37,8 @@ const columns = [
   }),
 ];
 
+// TODO: Add pagination, sorting and edit action
+
 const UsersTable: FC<{ users: UserProps[] }> = ({ users }) => {
   const table = useReactTable({
     data: users,
@@ -48,7 +50,7 @@ const UsersTable: FC<{ users: UserProps[] }> = ({ users }) => {
     <>
       <div className='relative overflow-x-auto rounded shadow-md sm:rounded-lg'>
         <table className='w-full text-left text-sm text-neutral-400'>
-          <thead className='bg-neutral-700 text-xs uppercase text-neutral-400'>
+          <thead className='bg-neutral-600 text-xs uppercase text-neutral-300'>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
@@ -64,10 +66,10 @@ const UsersTable: FC<{ users: UserProps[] }> = ({ users }) => {
               </tr>
             ))}
           </thead>
-          <tbody>
+          <tbody className=''>
             {table.getRowModel().rows.map(row => (
               <tr
-                className='border-b border-neutral-700 bg-neutral-800 hover:bg-neutral-600'
+                className='bg-neutral-800 even:bg-neutral-700 hover:bg-neutral-900'
                 key={row.id}>
                 {row.getVisibleCells().map(cell => (
                   <td className='py-4 px-6' key={cell.id}>

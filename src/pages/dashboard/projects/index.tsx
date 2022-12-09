@@ -1,27 +1,33 @@
 import { unstable_getServerSession } from 'next-auth/next';
 import Head from 'next/head';
 
-import Layout from '@/components/dashboard/Layout';
 import seo from '@/data/seo';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { NextPageWithLayout } from '@/types/page';
 import { GetServerSideProps } from 'next';
+import { Role } from '@prisma/client';
+import Layout from '@/components/dashboard/Layout';
+import prisma from '@/lib/prismadb';
 import Title from '@/components/dashboard/Title';
 
-const Dashboard: NextPageWithLayout = () => {
+const Projects: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>{`Overview | ${seo.title}`}</title>
+        <title>{`Projects | ${seo.title}`}</title>
       </Head>
 
-      <Title>Overview</Title>
-      <p>Charts and stuff eventually...</p>
+      <Title>Projects</Title>
+      <p>Show table with projects</p>
+      <p>
+        Need to be able to sort by a lot of different options. Could get
+        complex.
+      </p>
     </>
   );
 };
 
-Dashboard.getLayout = function (page) {
+Projects.getLayout = function (page) {
   return <Layout>{page}</Layout>;
 };
 
@@ -41,11 +47,25 @@ export const getServerSideProps: GetServerSideProps = async context => {
     };
   }
 
+  if (session.user.role !== Role.ADMIN) {
+    return {
+      redirect: {
+        destination: `/forbidden`,
+        permanent: false,
+      },
+    };
+  }
+
+  const data = await prisma.project.findMany();
+
+  const projects = JSON.parse(JSON.stringify(data));
+
   return {
     props: {
       session,
+      projects,
     },
   };
 };
 
-export default Dashboard;
+export default Projects;

@@ -13,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div className='dashboard-layout'>
         <Header className='dashboard-header' />
         <NavigationDrawer className='dashboard-sidebar' />
-        <main className='dashboard-main mx-8 my-2' id='main-content'>
+        <main className='dashboard-main mx-8 my-8' id='main-content'>
           {children}
         </main>
       </div>
