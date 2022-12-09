@@ -28,7 +28,7 @@ const navigationDrawerLinks = {
   secondary: [
     {
       name: 'Settings',
-      href: '/account',
+      href: '/dashboard/settings',
       icon: Cog6ToothIcon,
     },
     {

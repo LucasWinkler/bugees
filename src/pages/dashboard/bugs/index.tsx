@@ -21,7 +21,7 @@ const Bugs: NextPageWithLayout = () => {
       <p>Show table with bugs</p>
       <p>
         Bugs will be from all projects that the user is in. Can be filtered by
-        bugs the user has created, is assinged to, or some other options. Could
+        bugs the user has created, is assigned to, or some other options. Could
         get complex going to keep it simple to start.
       </p>
     </>

@@ -17,7 +17,7 @@ const avatarMenuLinks = [
   },
   {
     name: 'Account Settings',
-    href: '/account',
+    href: '/dashboard/settings',
     icon: Cog6ToothIcon,
   },
 ];
