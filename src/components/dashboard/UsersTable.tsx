@@ -46,13 +46,13 @@ const UsersTable: FC<{ users: UserProps[] }> = ({ users }) => {
 
   return (
     <>
-      <div className='p-2'>
-        <table>
-          <thead>
+      <div className='relative overflow-x-auto rounded shadow-md sm:rounded-lg'>
+        <table className='w-full text-left text-sm text-neutral-400'>
+          <thead className='bg-neutral-700 text-xs uppercase text-neutral-400'>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
-                  <th key={header.id}>
+                  <th className='py-3 px-6' key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -66,9 +66,11 @@ const UsersTable: FC<{ users: UserProps[] }> = ({ users }) => {
           </thead>
           <tbody>
             {table.getRowModel().rows.map(row => (
-              <tr key={row.id}>
+              <tr
+                className='border-b border-neutral-700 bg-neutral-800 hover:bg-neutral-600'
+                key={row.id}>
                 {row.getVisibleCells().map(cell => (
-                  <td key={cell.id}>
+                  <td className='py-4 px-6' key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}
