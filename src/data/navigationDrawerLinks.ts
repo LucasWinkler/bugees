@@ -39,7 +39,7 @@ const navigationDrawerLinks = {
   ],
   admin: [
     {
-      name: 'Manage Users',
+      name: 'Users',
       href: '/dashboard/admin/users',
       icon: UsersIcon,
     },

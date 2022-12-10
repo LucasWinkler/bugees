@@ -20,7 +20,7 @@
 
 @layer utilities {
   .dashboard-layout {
-    @apply grid h-screen [grid-template-rows:0.2fr_3fr] [grid-template-columns:clamp(12rem,30vw,20rem)_1fr_1fr_1fr];
+    @apply grid h-screen [grid-template-rows:0.2fr_3fr] [grid-template-columns:clamp(3rem,10vw,5rem)] sm:[grid-template-columns:clamp(12rem,30vw,20rem)_1fr_1fr_1fr];
 
     grid-template-areas:
       'sidebar header header header'

@@ -7,6 +7,7 @@ import {
 } from '@tanstack/react-table';
 import { Role } from '@prisma/client';
 import formatDate from '@/util/formatDate';
+import titleCase from '@/util/titleCase';
 
 type UserProps = {
   id: string;
@@ -19,10 +20,6 @@ type UserProps = {
 const columnHelper = createColumnHelper<UserProps>();
 
 const columns = [
-  columnHelper.accessor<'role', Role>('role', {
-    header: 'Role',
-    cell: info => info.getValue(),
-  }),
   columnHelper.accessor<'name', string>('name', {
     header: 'Name',
     cell: info => info.getValue(),
@@ -30,6 +27,10 @@ const columns = [
   columnHelper.accessor<'email', string>('email', {
     header: 'Email',
     cell: info => info.getValue(),
+  }),
+  columnHelper.accessor<'role', Role>('role', {
+    header: 'Role',
+    cell: info => titleCase(info.getValue()),
   }),
   columnHelper.accessor<'createdAt', Date>('createdAt', {
     header: 'Date Created',

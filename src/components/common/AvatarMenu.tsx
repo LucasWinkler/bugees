@@ -75,7 +75,7 @@ const AvatarMenu = () => {
             )}
           </Menu.Item>
           <div className='separator'></div>
-          {avatarMenuLinks.map(link => (
+          {avatarMenuLinks.primary.map(link => (
             <Menu.Item key={link.name}>
               {({ active }) => (
                 <Link
@@ -93,6 +93,23 @@ const AvatarMenu = () => {
             </Menu.Item>
           ))}
           <div className='separator'></div>
+          {avatarMenuLinks.secondary.map(link => (
+            <Menu.Item key={link.name}>
+              {({ active }) => (
+                <Link
+                  className={clsx(
+                    active ? 'bg-neutral-800' : '',
+                    'block rounded px-4 py-2 text-sm text-neutral-300'
+                  )}
+                  href={link.href}>
+                  <div className='flex items-center gap-2'>
+                    <link.icon className='h-[1.15rem] w-auto' />
+                    {link.name}
+                  </div>
+                </Link>
+              )}
+            </Menu.Item>
+          ))}
           <Menu.Item>
             {({ active }) => (
               <button
