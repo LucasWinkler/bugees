@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 
-import defaultProfileImage from '../../../public/images/default-profile-image.png';
+import defaultProfileImage from '/public/images/default-profile-image.png';
 import avatarMenuLinks from '@/data/avatarMenuLinks';
 import titleCase from '@/util/titleCase';
 
